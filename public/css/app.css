@@ -1,0 +1,107 @@
+/* * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} */
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#error {
+    position: relative;
+    height: 100vh;
+    background: #f6f6f6;
+}
+
+#error .error {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    max-width: 767px;
+    width: 100%;
+    line-height: 1.4;
+    padding: 110px 40px;
+    text-align: center;
+    background: #fff;
+    -webkit-box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* .error .notauto-404, */
+
+.error-401,
+.error-403,
+.error-404,
+.error-419 {
+    position: relative;
+    height: 180px;
+}
+
+.error-401 h1,
+.error-403 h1,
+.error-404 h1,
+.error-419 h1 {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 165px;
+    font-weight: 700;
+    margin: 0px;
+    color: #262626;
+    text-transform: uppercase;
+}
+
+.error-401 h1>span {
+    color: #00b7ff;
+}
+
+.error-403 h1>span {
+    color: #f8db5a;
+}
+
+.error-404 h1>span {
+    color: #895af8;
+}
+
+.error-419 h1>span {
+    color: #6ddf69;
+}
+
+.error h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #151515;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+    .notfound h2 {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .notfound .notfound-404 h1 {
+        font-size: 141px;
+    }
+}
+
+.footer {
+    margin-top: 5px;
+    height: auto;
+}
