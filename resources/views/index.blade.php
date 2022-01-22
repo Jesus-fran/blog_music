@@ -10,37 +10,62 @@
 </head>
 <body>
     
-        <nav class="navbar navbar-dark bg-dark nav">
+        <nav class="navbar navbar-dark bar_nav">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">Home</a>            
-                    <button class="btn btn-outline-success me-2" type="button">Publica</button>
-                    <button class="btn btn-outline-success me-2" type="button">Sesión</button>
-                    <button class="btn btn-outline-success me-2" type="button">Registrate</button>
+                    <a class="navbar-brand" href="{{ url('/') }}"><div id="home">Mi Música</div></a>
+                    <!-- <img src="{{ asset('img/logo.png') }}" class="logo" alt="home">             -->
+                    <a class="btn btn-outline-info offset-md-4" href="{{ url('/publicacion') }}" role="button">Publicaciones
+                    
+                    </a>
+                    @section('btn_sesion')
+                    <a class="btn btn-outline-info" href="{{ url('/ini_sesion') }}" role="button">Iniciar sesión
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                    </a>
+                    @show
+                    <a class="btn btn-outline-info" href="{{ url('/mi_cuenta') }}" role="button">Mi cuenta
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                    </a>
+
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar posts" aria-label="Search">
                     <button class="btn btn-outline-info" type="submit">Search</button>
                 </form>
             </div>
             <br><br><br>
+
+            @section('breadcrumbs')
             
+            <!-- Breadcrumbs -->
+            {{ Breadcrumbs::render('home') }}
+            
+            @show
         </nav>
 
             <div class="container-fluid">
             @section('contenido')
+                <br>
+                <img src="{{ asset('img/banner2.jpg') }}" class="banner" alt="banner1">
+                <h6>En este blog puedes publicar todo lo relacionado a tus gustos de la música.</h6>
+                <h6>¡¡Sientete libre de expresar tus ideas y gustos!!.</h6>
+                
+                <br>
+                <div>
+                <img src="{{ asset('img/banner4.jpg') }}" class="banner4" alt="banner4">            
+                </div>
                 <br><br><br>
-                <br><br><br>
-                <br><br><br>
-                <a href="{{ url('/401') }}">Error 401</a><br>
+
+                <!-- <a href="{{ url('/401') }}">Error 401</a><br>
                 <a href="{{ url('/403') }}">Error 403</a><br>
                 <a href="{{ url('/404') }}">Error 404</a><br>
-                <a href="{{ url('/419') }}">Error 419</a>
-                <br><br><br>
-                <br><br><br>
-                <br><br><br>
+                <a href="{{ url('/419') }}">Error 419</a> -->
             @show
             </div>
             
-            <footer class="footer bg-dark">
+            <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col">

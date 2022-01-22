@@ -8,6 +8,42 @@ body {
     margin: 0;
 }
 
+#home {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 25px;
+    letter-spacing: 0.6px;
+    word-spacing: -5px;
+    color: #7230db;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+
+.bar_nav {
+    background: rgb(33, 33, 33);
+    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgba(33, 33, 33, 1) 100%);
+}
+
+.div_banner {
+    float: right;
+    width: 50%;
+    height: auto;
+}
+
+.banner {
+    float: right;
+    width: 50%;
+    display: block;
+}
+
+.banner4 {
+    width: 50%;
+    margin-top: 24%;
+    display: block;
+}
+
 #error {
     position: relative;
     height: 100vh;
@@ -102,6 +138,8 @@ body {
 }
 
 .footer {
-    margin-top: 5px;
+    margin-top: auto;
     height: auto;
+    background: rgb(33, 33, 33);
+    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgba(33, 33, 33, 1) 100%);
 }
