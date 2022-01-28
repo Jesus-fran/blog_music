@@ -9,17 +9,6 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push('Home', route('home'));
 });
 
-// Home > iniciar sesion
-Breadcrumbs::for('/ini_sesion', function (BreadcrumbTrail $trail) {
-    $trail->parent('home');
-    $trail->push('Iniciar sesion', route('/ini_sesion'));
-});
-
-// Home > iniciar sesion > registrar
-Breadcrumbs::for('/regis_user', function (BreadcrumbTrail $trail) {
-    $trail->parent('/ini_sesion');
-    $trail->push('Registrarse', route('/regis_user'));
-});
 
 // Home > Publicaciones
 Breadcrumbs::for('/publicacion', function (BreadcrumbTrail $trail) {
@@ -43,7 +32,23 @@ Breadcrumbs::for('/estadisticas', function (BreadcrumbTrail $trail) {
 Breadcrumbs::for('/mi_cuenta', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
     $trail->push('Mis cuenta', route('/mi_cuenta'));
-}); 
+});
+
+
+// Home > Mi cuenta > Iniciar sesión
+Breadcrumbs::for('/ini_sesion', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Iniciar sesion', route('/ini_sesion'));
+});
+
+// Home > Mi cuenta > registrar
+Breadcrumbs::for('/regis_user', function (BreadcrumbTrail $trail) {
+    $trail->parent('/ini_sesion');
+    $trail->push('Registrarse', route('/regis_user'));
+});
+
+
+
 
 // Home > Mi cuenta > editar cuenta
 Breadcrumbs::for('/edit_cuenta', function (BreadcrumbTrail $trail) {

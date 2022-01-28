@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css')}}" />
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <title>Mi musica</title>
 </head>
 <body>
@@ -14,17 +15,10 @@
             <div class="container-fluid">
                     <a class="navbar-brand" href="{{ url('/') }}"><div id="home">Mi Música</div></a>
                     <!-- <img src="{{ asset('img/logo.png') }}" class="logo" alt="home">             -->
-                    <a class="btn btn-outline-info offset-md-4" href="{{ url('/publicacion') }}" role="button">Publicaciones
-                    
+                    <a class="btn btn-outline-info offset-md-4" href="{{ url('/publicacion') }}" role="button">Publicaciones           
                     </a>
-                    @section('btn_sesion')
-                    <a class="btn btn-outline-info" href="{{ url('/ini_sesion') }}" role="button">Iniciar sesión
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                    </svg>
-                    </a>
-                    @show
-                    <a class="btn btn-outline-info" href="{{ url('/mi_cuenta') }}" role="button">Mi cuenta
+
+                    <a class="btn btn-outline-info" href="{{ url('/ini_sesion') }}" role="button">Mi cuenta
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     </svg>
@@ -45,12 +39,15 @@
             @show
         </nav>
 
-            <div class="container-fluid">
+            <div class="container-fluid ">
             @section('contenido')
                 <br>
                 <img src="{{ asset('img/banner2.jpg') }}" class="banner" alt="banner1">
-                <h6>En este blog puedes publicar todo lo relacionado a tus gustos de la música.</h6>
-                <h6>¡¡Sientete libre de expresar tus ideas y gustos!!.</h6>
+                <h6>
+                    En este blog puedes encontrar publicaciones de los distintos tipos de música.
+                    Asi como saber opiniones sobre los generos de música mas escuchados.
+                </h6>
+                <h6>¡¡Sientete libre de  leer , comentar o expresar tus ideas y gustos!!.</h6>
                 
                 <br>
                 <div>

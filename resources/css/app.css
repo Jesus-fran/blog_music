@@ -8,6 +8,14 @@ body {
     margin: 0;
 }
 
+.error_pass:invalid {
+    border: 2px dashed red;
+}
+
+.error_pass:valid {
+    border: 2px solid rgb(21, 168, 46);
+}
+
 #notfound {
     position: relative;
     height: 100vh;

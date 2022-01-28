@@ -18,13 +18,6 @@ Route::name('home')->get('/', function () {
     return view('index');
 });
 
-Route::name('/ini_sesion')->get('/ini_sesion', function () {
-    return view('login.ini_sesion');
-});
-
-Route::name('/regis_user')->get('/regis_user', function () {
-    return view('login.registrar.regis_user');
-});
 
 Route::name('/publicacion')->get('/publicacion', function () {
     return view('publicaciones.publicacion');
@@ -42,6 +35,16 @@ Route::name('/mi_cuenta')->get('/mi_cuenta', function () {
     return view('cuenta.mi_cuenta');
 });
 
+Route::name('/ini_sesion')->get('/ini_sesion', function () {
+    return view('cuenta.ini_sesion');
+});
+
+Route::name('/regis_user')->get('/regis_user', function () {
+    return view('cuenta.registrar.regis_user');
+});
+
+Route::name('/validar_form')->get('/validar_form', 'App\Http\Controllers\FormValidationController@UserForm');  
+
 Route::name('/edit_cuenta')->get('/edit_cuenta', function () {
     return view('cuenta.edit_cuenta');
 });
@@ -49,6 +52,14 @@ Route::name('/edit_cuenta')->get('/edit_cuenta', function () {
 Route::name('/privacidad')->get('/privacidad', function () {
     return view('cuenta.privacidad');
 });
+
+Route::name('/privacidad')->get('/privacidad', function () {
+    return view('cuenta.privacidad');
+});
+
+// Route::get('/form', 'FormValidtionController@createUserForm');
+// Route::post('/form', 'FormValidtionController@UserForm');
+
 
 
 // rutas de errores
