@@ -28,7 +28,7 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Correo</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                                 </div>
                             </div>           
                         </div>
@@ -37,14 +37,14 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
-                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                                 </div>
                             </div>           
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-info" href="{{ url('/mi_cuenta') }}" role="button">Ingresar</a>
+                                <a class="btn btn-info" href="{{ url('/administracion') }}" role="button">Ingresar</a>
                             </div>
                         </div>
                         <br><br>
