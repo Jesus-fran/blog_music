@@ -49,9 +49,10 @@
         <br><br><br>
         <br><br><br>
 
-        <script src="{{ asset('javascript/crear_editor_comentario.js') }}"></script>
-        <script src="{{ asset('javascript/subir_comentario.js') }}"></script>
-        <script src="{{ asset('javascript/obtener_comentarios.js') }}"></script>
+      
+        <script src="{{ asset('js/crear_editor_comentario.js') }}"></script>
+        <script src="{{ asset('js/subir_comentario.js') }}"></script>
+        <script src="{{ asset('js/obtener_comentarios.js') }}"></script>
 
     
 </div>

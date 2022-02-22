@@ -37,7 +37,7 @@
         <br><br>
         <div id="vista_prev"></div>
         <br><br><br>
-        <script src="{{ asset('javascript/crear_editor.js') }}"></script>
-        <script src="{{ asset('javascript/subir_public.js') }}"></script>
+        <script src="{{ asset('js/crear_editor.js') }}"></script>
+        <script src="{{ asset('js/subir_public.js') }}"></script>
     </div>
 @endsection

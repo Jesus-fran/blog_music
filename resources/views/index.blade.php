@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     {{-- jquery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{{ asset('javascript/javascript.js') }}"></script>
+    <script src="{{ asset('js/javascript.js') }}"></script>
     
     <title>Mi musica</title>
 </head>
