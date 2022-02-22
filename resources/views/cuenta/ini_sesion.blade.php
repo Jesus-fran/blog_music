@@ -66,7 +66,7 @@
                         <br>
                         <div class="row">
                             <div class="col">
-                                <a class="btn btn-info" href="{{ url('/administracion') }}" role="button">Ingresar como lector</a>
+                                <a class="btn btn-info" href="{{ url('/publicacion') }}" role="button">Ingresar como lector</a>
                             </div>
                         </div>
 
