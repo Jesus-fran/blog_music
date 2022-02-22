@@ -20,7 +20,7 @@ Breadcrumbs::for('/publicacion', function (BreadcrumbTrail $trail) {
 
 // Home > Publicaciones > crear publicación
 Breadcrumbs::for('/crear_publicacion', function (BreadcrumbTrail $trail) {
-    $trail->parent('/publicacion');
+    $trail->parent('home');
     $trail->push('Crear nueva publicación', route('/crear_publicacion'));
 }); 
 
@@ -76,18 +76,11 @@ Breadcrumbs::for('/regis_user', function (BreadcrumbTrail $trail) {
     $trail->push('Registrarse', route('/regis_user'));
 });
 
-
-// Breadcrumbs para administrar cuenta
-
-
-// Home > Mi cuenta > editar cuenta
-Breadcrumbs::for('/edit_cuenta', function (BreadcrumbTrail $trail) {
-    $trail->parent('/mi_cuenta');
-    $trail->push('Editar cuenta', route('/edit_cuenta'));
+// Home > Publicaciones > $nombre publicación
+Breadcrumbs::for('/{pub}', function (BreadcrumbTrail $trail, $pub) {
+    $trail->parent('/publicaciones');
+    $trail->push('Festival de música', route('/{pub}'));
 });
 
-// Home > Mi cuenta > privacidad
-Breadcrumbs::for('/privacidad', function (BreadcrumbTrail $trail) {
-    $trail->parent('/mi_cuenta');
-    $trail->push('Privacidad', route('/privacidad'));
-});
+
+

@@ -9,7 +9,8 @@
 @section('contenido')
 
 <div class="container">
-   
+  @csrf
+
 
     <h4>Posts recientes</h4>
     <div class="row row-cols-1 row-cols-md-3 g-4">

@@ -27,10 +27,6 @@ Route::name('/crear_publicacion')->get('/crear_publicacion', function () {
     return view('publicaciones.crear.crear_publicacion');
 });
 
-Route::name('/estadisticas')->get('/estadisticas', function () {
-    return view('publicaciones.estadisticas');
-});
-
 
 Route::name('/ini_sesion')->get('/ini_sesion', function () {
     return view('cuenta.ini_sesion');
@@ -65,17 +61,6 @@ Route::name('/regis_user')->get('/regis_user', function () {
 
 Route::name('/validar_form')->get('/validar_form', 'App\Http\Controllers\FormValidationController@UserForm');  
 
-Route::name('/edit_cuenta')->get('/edit_cuenta', function () {
-    return view('cuenta.edit_cuenta');
-});
-
-Route::name('/privacidad')->get('/privacidad', function () {
-    return view('cuenta.privacidad');
-});
-
-Route::name('/privacidad')->get('/privacidad', function () {
-    return view('cuenta.privacidad');
-});
 
 // Rutas a posts
 
@@ -84,8 +69,16 @@ Route::name('/{pub}')->get('/{pub}', function ($pub) {
 });
 
 
-// Route::get('/form', 'FormValidtionController@createUserForm');
-// Route::post('/form', 'FormValidtionController@UserForm');
+// controlador para guardar publicacion
+Route::name('/guardar_pub')->post('/guardar_pub', 'App\Http\Controllers\SubirPublic@Guardar');  
+
+// controlador para guardar comentario
+Route::name('/guardar_comentario')->post('/guardar_comentario', 'App\Http\Controllers\SubirComentario@Guardar');  
+
+// / controlador para obtener comentarios
+Route::name('/obtener_comentarios')->post('/obtener_comentarios', 'App\Http\Controllers\ObtenerComentarios@Obtener');  
+
+
 
 
 

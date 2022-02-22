@@ -38,7 +38,7 @@ class FormValidationController extends Controller
         'pass_2.min' => 'El campo nombre debe contener al menos 8 caracteres.',
         'pass_2.max' => 'El campo nombre no debe contener más de 30 caracteres.',
         'pass_2.same' => 'Las contraseñas deben coincidir.',
-        'perms.required' => 'Acepte los terminos',
+        'perms.required' => 'Acepte los terminos para continuar',
     ];
 
     $request->validate($rules, $customMessages);
