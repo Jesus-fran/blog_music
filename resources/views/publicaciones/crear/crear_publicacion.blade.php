@@ -28,7 +28,7 @@
 
         <br><br><br>
         <h5 id="message_error" style="text-align:center; display:none;"></h5>
-        <textarea name="editor" id="editor" cols="150" rows="15"></textarea>
+        <textarea name="editor" id="editor" cols="150" rows="15" class="editor"></textarea>
         <br>
         <div class="row">
             <div class="col offset-2"><button id="previaButton" class="btn btn-primary">Vista previa</button></div>

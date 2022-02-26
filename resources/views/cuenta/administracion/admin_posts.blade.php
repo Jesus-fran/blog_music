@@ -18,7 +18,7 @@
     <h4>Posts recientes</h4>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card h-100">
+          <div class="card_pub h-100">
             <img src="{{ asset('img/posts/1.webp') }}" class="card-img-top imagen_posts" alt="...">
             <div class="card-body">
               <h5 class="card-title">Festival de música</h5>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card_pub h-100">
             <img src="{{ asset('img/posts/2.webp') }}" class="card-img-top imagen_posts" alt="...">
             <div class="card-body">
               <h5 class="card-title">La guitarra, ¿ un instrumento antiguo?</h5>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card_pub h-100">
             <img src="{{ asset('img/posts/3.webp') }}" class="card-img-top imagen_posts" alt="...">
             <div class="card-body">
               <h5 class="card-title">¿Qué es la música clasica?</h5>
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card h-100">
+          <div class="card_pub h-100">
             <img src="{{ asset('img/posts/4.webp') }}" class="card-img-top imagen_posts" alt="...">
             <div class="card-body">
               <h5 class="card-title">Los mejores musicas de DJ</h5>
@@ -79,7 +79,7 @@
         </div>
 
         <div class="col">
-            <div class="card h-100">
+            <div class="card_pub h-100">
               <img src="{{ asset('img/posts/5.webp') }}" class="card-img-top imagen_posts" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Festival de rock</h5>
@@ -95,7 +95,7 @@
         </div>
 
         <div class="col">
-            <div class="card h-100">
+            <div class="card_pub h-100">
               <img src="{{ asset('img/posts/6.webp') }}" class="card-img-top imagen_posts" alt="...">
               <div class="card-body">
                 <h5 class="card-title">El reggaeton y su gran influencia</h5>

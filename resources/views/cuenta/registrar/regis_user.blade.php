@@ -33,7 +33,7 @@
                             
                             @if (count($errors) == 0)
                                 <br><br>
-                                <label class="text-success bg-light"><strong class="text-success">Bien hecho!</strong> Te has registrado, ya puedes iniciar sesión.<br><br></label>
+                                {{-- <label class="text-success bg-light"><strong class="text-success">Bien hecho!</strong> Te has registrado, ya puedes iniciar sesión.<br><br></label> --}}
                             @endif
                             <br><br>
                             <div class="row">

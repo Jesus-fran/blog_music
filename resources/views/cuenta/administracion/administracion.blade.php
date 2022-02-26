@@ -28,7 +28,7 @@
     <div class="row">
         <div class="card-group">
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card card_admin" style="width: 18rem;">
                     <img src="{{ asset('img/usuario_redactor_2.webp') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Usuarios redactores</h5>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card card_admin" style="width: 18rem;">
                     <img src="{{ asset('img/admin_posts.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Posts para administrar</h5><br><br>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card card_admin" style="width: 18rem;">
                     <img src="{{ asset('img/usuario_lector.webp') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Usuarios lectores</h5>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card card_admin" style="width: 18rem;">
                     <img src="{{asset('img/admin_comentarios_2.jpg')}}" class="card-img-top img_admin" alt="...">
                     <div class="card-body">
                 

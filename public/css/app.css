@@ -4,8 +4,19 @@
 } */
 
 body {
+    /* background: rgb(33, 33, 33);
+    background: linear-gradient(90deg, rgb(74, 37, 95) 0%, rgb(35, 30, 39) 35%, rgb(54, 107, 72) 100%); */
+    /* background-image: url("../img/fondo_2.jpg"); */
+    background-color: #151515;
+}
+
+.contenedor_nav {
+    background-color: rgba(252, 252, 252, 0.932);
     padding: 0;
-    margin: 0;
+}
+
+.contenedor {
+    background-color: rgba(252, 252, 252, 0.932);
 }
 
 #home {
@@ -22,8 +33,15 @@ body {
 }
 
 .bar_nav {
+    /* min-width: 100%; */
     background: rgb(33, 33, 33);
-    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgba(33, 33, 33, 1) 100%);
+    background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
+}
+
+.bar_bread {
+    z-index: 99;
+    background: rgb(33, 33, 33);
+    background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
 }
 
 .div_banner {
@@ -155,7 +173,7 @@ body {
 
 .card_header_sesion {
     background: rgb(33, 33, 33);
-    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgba(33, 33, 33, 1) 100%);
+    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgb(43, 99, 77) 100%);
 }
 
 .img_admin {
@@ -166,9 +184,28 @@ body {
     height: 250px;
 }
 
+.contenedor_foot {
+    background-color: rgba(252, 252, 252, 0.932);
+    padding: 0;
+}
+
+.card_pub:hover {
+    background-color: #cecece;
+    margin: 4px;
+}
+
+.card_admin:hover {
+    background-color: #f3eded;
+    margin: 5px;
+}
+
 .footer {
     margin-top: auto;
     height: auto;
     background: rgb(33, 33, 33);
-    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgba(33, 33, 33, 1) 100%);
+    background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgb(43, 99, 77) 100%);
+}
+
+.editor {
+    width: inherit;
 }
