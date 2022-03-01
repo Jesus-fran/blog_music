@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
     <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
@@ -19,32 +25,48 @@
 
 <body>
 
-    <div class="container contenedor_nav">
-        <nav class="navbar navbar-dark bar_nav">
+    <div class="container-fluid bg-dark contenedor_nav">
+        <nav class="navbar  navbar-expand-lg bg-dark navbar-dark bar_nav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div id="home">Mi Música</div>
                 </a>
-                <!-- <img src="{{ asset('img/logo.png') }}" class="logo" alt="home">             -->
-                <a class="btn btn-outline-info offset-md-4" href="{{ url('/publicacion') }}"
-                    role="button">Publicaciones
-                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones"
+                    aria-controls="opciones" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="opciones">
+                    <div class="container">
+                        <div class="row">
+                            <div class="navbar-nav">
+                                <div class="col-md-auto offset-md-3"><a class="btn btn-outline-info offset-md-4"
+                                        href="{{ url('/publicacion') }}" role="button">Publicaciones
+                                    </a></div>
+                                <div class="col-md-auto offset-md-1">
+                                    @section('btns')
+                                        {{-- btns --}}
+                                    @show
+                                </div>
+                                <div class="col-md-auto offset-md-1"> <a class="btn btn-outline-info"
+                                        href="{{ url('/ini_sesion') }}" role="button">Mi cuenta
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        </svg>
+                                    </a></div>
+                                <div class="col-md-auto offset-md-1">
+                                    <form class="d-flex">
+                                        <input class="form-control me-2" type="search" placeholder="Buscar posts"
+                                            aria-label="Search">
+                                        <button class="btn btn-outline-info" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                @section('btns')
-                    {{-- btns --}}
-                @show
-
-                <a class="btn btn-outline-info" href="{{ url('/ini_sesion') }}" role="button">Mi cuenta
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-person-fill" viewBox="0 0 16 16">
-                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                    </svg>
-                </a>
-
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar posts" aria-label="Search">
-                    <button class="btn btn-outline-info" type="submit">Search</button>
-                </form>
             </div>
             <br><br><br>
         </nav>
@@ -79,9 +101,9 @@
             <br><br><br>
 
             <!-- <a href="{{ url('/401') }}">Error 401</a><br>
-                        <a href="{{ url('/403') }}">Error 403</a><br>
-                        <a href="{{ url('/404') }}">Error 404</a><br>
-                        <a href="{{ url('/419') }}">Error 419</a> -->
+                                    <a href="{{ url('/403') }}">Error 403</a><br>
+                                    <a href="{{ url('/404') }}">Error 404</a><br>
+                                    <a href="{{ url('/419') }}">Error 419</a> -->
         @show
 
     </div>
