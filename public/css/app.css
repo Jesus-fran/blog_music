@@ -39,6 +39,7 @@ body {
 }
 
 .bar_bread {
+    width: 100%;
     z-index: 99;
     background: rgb(33, 33, 33);
     background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
@@ -62,11 +63,12 @@ body {
     display: block;
 }
 
-.text {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.text,
+p {
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-size: large;
-    color: #151515;
+    color: #000000;
 }
 
 #error {
