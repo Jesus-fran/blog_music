@@ -6,7 +6,7 @@
 
 @section('breadcrumbs')
 <!-- Breadcrumbs -->
-{{ Breadcrumbs::render('/admin_posts') }}
+{{ Breadcrumbs::render('/admin-publicaciones') }}
 @endsection
 @section('contenido')
 
@@ -26,8 +26,8 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ url('') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
+                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                 </small>
             </div>
           </div>
@@ -41,8 +41,8 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ url('') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>  
+                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
+                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>  
                 </small>
             </div>
           </div>
@@ -56,8 +56,8 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ url('') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
+                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                 </small>
             </div>
           </div>
@@ -71,8 +71,8 @@
             </div>
             <div class="card-footer">
                 <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ url('') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
+                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                 </small>
             </div>
           </div>
@@ -87,8 +87,8 @@
               </div>
               <div class="card-footer">
                   <small class="text-muted">
-                    <a class="btn btn-primary" href="{{ url('') }}" role="button">Editar</a>
-                    <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                    <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
+                    <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                   </small>
               </div>
             </div>
@@ -103,8 +103,8 @@
               </div>
               <div class="card-footer">
                   <small class="text-muted">
-                    <a class="btn btn-primary" href="{{ url('') }}" role="button">Editar</a>
-                    <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                    <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
+                    <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                   </small>
               </div>
             </div>

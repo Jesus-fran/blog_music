@@ -7,7 +7,7 @@ document.querySelector('#saveButton').addEventListener("click", function() {
 
     if (val != "" && val != null) {
         $.ajax({
-            url: '/guardar_pub',
+            url: '/guardar-publicacion',
             async: true,
             data: { pub: val, _token: token },
             type: 'POST',
@@ -25,7 +25,7 @@ document.querySelector('#saveButton').addEventListener("click", function() {
                         $('#message_error').show('slow');
                     }
 
-                    window.location.replace('/publicacion');
+                    window.location.replace('publicaciones');
                 } else {
                     $('#message_error').attr('class', 'text-danger bg-light');
                     $('#message_error').html("Error al almacenar en la base de datos");
@@ -76,7 +76,4 @@ document.querySelector('#previaButton').addEventListener("click", function() {
         $('#message_error').show('slow');
 
     }
-
-
-
 })

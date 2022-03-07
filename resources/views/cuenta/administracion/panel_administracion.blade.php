@@ -3,7 +3,6 @@
 @section('btn_sesion')
 @endsection
 
-
 @section('breadcrumbs')
 <!-- Breadcrumbs -->
 {{ Breadcrumbs::render('/administracion') }}
@@ -33,7 +32,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Usuarios redactores</h5>
                       <p class="card-text">Administra a los usuarios que redactan o redactaran en los posts</p><br>
-                      <a href="{{ url('/admin_redactores') }}" class="btn btn-primary">Administrar redactores</a>
+                      <a href="{{ route('admin-redactores') }}" class="btn btn-primary">Administrar redactores</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +42,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Posts para administrar</h5><br><br>
                       <p class="card-text">Elimina, oculta y aprueba los posts de los redactores.</p><br><br>
-                      <a href="{{ url('/admin_posts') }}" class="btn btn-primary">Administrar posts</a>
+                      <a href="{{ route('admin-publicaciones') }}" class="btn btn-primary">Administrar posts</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +52,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Usuarios lectores</h5>
                       <p class="card-text">Elimina o suspende usuarios lectores.</p><br>
-                      <a href="{{ url('/admin_lectores') }}" class="btn btn-primary">Administrar lectores</a>
+                      <a href="{{ route('admin-lectores') }}" class="btn btn-primary">Administrar lectores</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +63,7 @@
                 
                       <h5 class="card-title">Comentarios</h5>
                       <p class="card-text">Elimina comentarios o respuestas de los posts.</p>
-                      <a href="{{ url('/admin_comentarios') }}" class="btn btn-primary">Administrar comentarios</a>
+                      <a href="{{ route('admin-comentarios') }}" class="btn btn-primary">Administrar comentarios</a>
                     </div>
                 </div>
             </div>
@@ -79,11 +78,11 @@
 </div>
 
 <br>
-
+{{-- Muestra una grafica --}}
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
 </script>
-<script src="{{ asset('datos_grafico.js') }}">
+<script src="{{ asset('js/datos_grafico.js') }}">
 </script>
 @endsection

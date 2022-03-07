@@ -6,7 +6,7 @@
 
 @section('breadcrumbs')
 <!-- Breadcrumbs -->
-{{ Breadcrumbs::render('/admin_lectores') }}
+{{ Breadcrumbs::render('/admin-lectores') }}
 @endsection
 @section('contenido')
 
@@ -19,91 +19,91 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Maria Hernandez
            
-              <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>     
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+              <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>     
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Juan Garcia
 
-              <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+              <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Luis Martinez
 
-              <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a> 
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+              <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a> 
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 Francisco Lopez
 
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Jesus Gonzalez
 
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Ana Perez
                 
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Rosa Rodriguez
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Jorge Ramirez
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Miguel Cruz
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Carlos Flores
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Juana Gomez
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Martha Morales
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center">
                 Guadalupe Vazquez
                  
-                <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-              <a class="btn btn-danger" href="{{ url('') }}" role="button">Suspender</a>     
+                <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
+              <a class="btn btn-danger" href="{{ route('home') }}" role="button">Suspender</a>     
 
               </li>
           </ul>

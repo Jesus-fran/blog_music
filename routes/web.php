@@ -1,88 +1,47 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\UserController;
+use App\Models\Usuario;
+use App\Http\Controllers\FormValidationController;
+use App\Http\Controllers\GetViewsController;
+use App\Http\Controllers\SubirPublic;
+use App\Http\Controllers\SubirComentario;
+use App\Http\Controllers\ObtenerComentarios;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// Home
+Route::get('/', [GetViewsController:: class, 'ViewHome'])->name('home');
 
-Route::name('home')->get('/', function () {
-    return view('index');
-});
+// Mi cuenta
+Route::get('mi-cuenta', [GetViewsController:: class, 'ViewMiCuenta'])->name('mi-cuenta');
 
+Route::get('registrarse', [GetViewsController:: class, 'ViewRegistrarse'])->name('registrarse');
 
-Route::name('/publicacion')->get('/publicacion', function () {
-    return view('publicaciones.publicacion');
-});
+Route::get('registrarse/{registro?}', [FormValidationController:: class, 'GetViewRegistrarse'])->name('registrarse');
 
-Route::name('/crear_publicacion')->get('/crear_publicacion', function () {
-    return view('publicaciones.crear.crear_publicacion');
-});
+Route::post('registrar-usuario', [FormValidationController:: class, 'UserForm'])->name('registrar-usuario');
 
+Route::post('iniciar-sesion', [FormValidationController:: class, 'IniciarSesion'])->name('iniciar-sesion');
 
-Route::name('/ini_sesion')->get('/ini_sesion', function () {
-    return view('cuenta.ini_sesion');
-});
+// Publicaciones
+Route::get('publicaciones', [GetViewsController:: class, 'ViewPublicaciones'])->name('publicaciones');
 
+Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion');
 
-Route::name('/administracion')->get('/administracion', function () {
-    return view('cuenta.administracion.administracion');
-});
+Route::post('/guardar-publicacion', [SubirPublic:: class, 'Guardar'])->name('guardar-publicacion');
 
-Route::name('/admin_redactores')->get('/admin_redactores', function () {
-    return view('cuenta.administracion.admin_redactores');
-});
+// Comentarios
+Route::post('/guardar-comentario', [SubirComentario:: class, 'Guardar'])->name('guardar_comentario');
+Route::post('/obtener-comentarios', [ObtenerComentarios:: class, 'Obtener'])->name('obtener-comentarios');
 
-Route::name('/admin_lectores')->get('/admin_lectores', function () {
-    return view('cuenta.administracion.admin_lectores');
-});
+// Administracion
+Route::get('administracion', [GetViewsController:: class, 'ViewAdministracion'])->name('administracion');
+Route::get('admin-redactores', [GetViewsController:: class, 'ViewAdminRedactores'])->name('admin-redactores');
+Route::get('admin-lectores', [GetViewsController:: class, 'ViewAdminLectores'])->name('admin-lectores');
+Route::get('admin-publicaciones', [GetViewsController:: class, 'ViewAdminPublicaciones'])->name('admin-publicaciones');
+Route::get('admin-comentarios', [GetViewsController:: class, 'ViewAdminComentarios'])->name('admin-comentarios');
 
-
-Route::name('/admin_posts')->get('/admin_posts', function () {
-    return view('cuenta.administracion.admin_posts');
-});
-
-
-Route::name('/admin_comentarios')->get('/admin_comentarios', function () {
-    return view('cuenta.administracion.admin_comentarios');
-});
-
-Route::name('/regis_user')->get('/regis_user', function () {
-    return view('cuenta.registrar.regis_user');
-});
-
-Route::name('/validar_form')->get('/validar_form', 'App\Http\Controllers\FormValidationController@UserForm');  
-
-
-// Rutas a posts
-
-Route::name('/{pub}')->get('/{pub}', function ($pub) {
-    return view('publicaciones.'.$pub);
-});
-
-
-// controlador para guardar publicacion
-Route::name('/guardar_pub')->post('/guardar_pub', 'App\Http\Controllers\SubirPublic@Guardar');  
-
-// controlador para guardar comentario
-Route::name('/guardar_comentario')->post('/guardar_comentario', 'App\Http\Controllers\SubirComentario@Guardar');  
-
-// / controlador para obtener comentarios
-Route::name('/obtener_comentarios')->post('/obtener_comentarios', 'App\Http\Controllers\ObtenerComentarios@Obtener');  
-
-
-
-
-
-// rutas de errores
+// Errores
 Route::get('/401', function () {
     return view('errors.401');
 });

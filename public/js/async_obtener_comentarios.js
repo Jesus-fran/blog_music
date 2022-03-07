@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     if (id_publicacion != "" && id_publicacion != null) {
         $.ajax({
-            url: '/obtener_comentarios',
+            url: '/obtener-comentarios',
             async: true,
             data: { id_publicacion: id_publicacion, _token: token },
             type: 'POST',

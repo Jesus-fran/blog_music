@@ -10,77 +10,63 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
 });
 
 
-// Breadcrumbs para administrar publicaciones
+// PUBLICACIONES
 
 // Home > Publicaciones
-Breadcrumbs::for('/publicacion', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('/publicaciones', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Publicaciones', route('/publicacion'));
+    $trail->push('Publicaciones', route('publicaciones'));
 });
 
-// Home > Publicaciones > crear publicación
-Breadcrumbs::for('/crear_publicacion', function (BreadcrumbTrail $trail) {
+// Home > Publicaciones > Crear publicación
+Breadcrumbs::for('/crear-publicacion', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Crear nueva publicación', route('/crear_publicacion'));
+    $trail->push('Crear nueva publicación', route('crear-publicacion'));
 }); 
 
-// Home > Publicaciones > crear publicación
-Breadcrumbs::for('/estadisticas', function (BreadcrumbTrail $trail) {
-    $trail->parent('/publicacion');
-    $trail->push('Mis estadisticas', route('/estadisticas'));
-}); 
+// MI CUENTA
 
-// Home > Iniciar sesión > Administracion    
+// Home > Mi cuenta
+Breadcrumbs::for('/mi-cuenta', function (BreadcrumbTrail $trail) {
+    $trail->parent('home');
+    $trail->push('Mi cuenta', route('mi-cuenta'));
+});
+
+// Home > Mi cuenta > Registrarse
+Breadcrumbs::for('/registrarse', function (BreadcrumbTrail $trail) {
+    $trail->parent('/mi-cuenta');
+    $trail->push('Registrarse', route('registrarse'));
+});
+
+
+// ADMINISTRACIÓN
+
+// Home > Mi cuenta > Panel administracion    
 Breadcrumbs::for('/administracion', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
-    $trail->push('Administracion', route('/administracion'));
+    $trail->push('Panel administracion', route('administracion'));
 });
 
-
-// Home > Iniciar sesión > Administracion > admin redactores    
-Breadcrumbs::for('/admin_redactores', function (BreadcrumbTrail $trail) {
+// Home > Mi cuenta > Administracion > Admin redactores    
+Breadcrumbs::for('/admin-redactores', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
-    $trail->push('Administrar redactores', route('/admin_redactores'));
+    $trail->push('Administrar redactores', route('admin-redactores'));
 });
 
-
-// Home > Iniciar sesión > Administracion > Admin lectores    
-Breadcrumbs::for('/admin_lectores', function (BreadcrumbTrail $trail) {
+// Home > Mi cuenta > Administracion > Admin lectores    
+Breadcrumbs::for('/admin-lectores', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
-    $trail->push('Administrar lectores', route('/admin_lectores'));
+    $trail->push('Administrar lectores', route('admin-lectores'));
 });
 
-// Home > Iniciar sesión > Administracion > Admin posts    
-Breadcrumbs::for('/admin_posts', function (BreadcrumbTrail $trail) {
+// Home > Mi cuenta > Administracion > Admin publicaciones  
+Breadcrumbs::for('/admin-publicaciones', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
-    $trail->push('Administrar posts', route('/admin_posts'));
+    $trail->push('Administrar posts', route('admin-publicaciones'));
 });
 
-
-// Home > Iniciar sesión > Administracion > Admin comentarios    
-Breadcrumbs::for('/admin_comentarios', function (BreadcrumbTrail $trail) {
+// Home > Mi cuenta > Administracion > Admin comentarios    
+Breadcrumbs::for('/admin-comentarios', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
-    $trail->push('Administrar comentarios', route('/admin_comentarios'));
+    $trail->push('Administrar comentarios', route('admin-comentarios'));
 });
-
-
-// Home >  > Iniciar sesión
-Breadcrumbs::for('/ini_sesion', function (BreadcrumbTrail $trail) {
-    $trail->parent('home');
-    $trail->push('Iniciar sesion', route('/ini_sesion'));
-});
-
-// Home > Iniciar sesión > registrar
-Breadcrumbs::for('/regis_user', function (BreadcrumbTrail $trail) {
-    $trail->parent('/ini_sesion');
-    $trail->push('Registrarse', route('/regis_user'));
-});
-
-// Home > Publicaciones > $nombre publicación
-Breadcrumbs::for('/{pub}', function (BreadcrumbTrail $trail, $pub) {
-    $trail->parent('/publicaciones');
-    $trail->push('Festival de música', route('/{pub}'));
-});
-
-
-

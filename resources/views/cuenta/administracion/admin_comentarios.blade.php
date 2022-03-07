@@ -6,7 +6,7 @@
 
 @section('breadcrumbs')
 <!-- Breadcrumbs -->
-{{ Breadcrumbs::render('/admin_comentarios') }}
+{{ Breadcrumbs::render('/admin-comentarios') }}
 @endsection
 @section('contenido')
 
@@ -86,7 +86,7 @@
                           <div class="col">Luis Martinez</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>
@@ -118,7 +118,7 @@
                           <div class="col"> Francisco Lopez</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>
@@ -142,7 +142,7 @@
                           <div class="col">Jesus Gonzalez</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>
@@ -166,7 +166,7 @@
                           <div class="col">Ana Perez</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>
@@ -199,7 +199,7 @@
                           <div class="col">Maria Hernandez</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>
@@ -223,7 +223,7 @@
                           <div class="col">Juan Garcia</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>
@@ -247,7 +247,7 @@
                           <div class="col">Luis Martinez</div>
                           <div class="col">
                             
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
+                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
                           </div>
                       </div>
                     </small>

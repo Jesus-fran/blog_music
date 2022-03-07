@@ -7,7 +7,7 @@ document.querySelector('#saveComent').addEventListener("click", function() {
 
     if (val != "" && val != null) {
         $.ajax({
-            url: '/guardar_comentario',
+            url: '/guardar-comentario',
             async: true,
             data: { comentario: val, _token: token },
             type: 'POST',

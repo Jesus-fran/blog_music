@@ -1,3 +1,4 @@
+// Mostrar texto de sugerencia de los inputs
 $(document).ready(function() {
 
     $('#nombre_user, #correo, #pass_1, #pass_2, #pass_ini, #correo_ini').focus(function(e) {
@@ -13,7 +14,7 @@ $(document).ready(function() {
     });
 });
 
-// show and hide pass
+// mostrar y ocultar inputs password
 var hide = true;
 
 function show_pass(id_input, e) {
@@ -38,10 +39,9 @@ $(window).scroll(function() {
 });
 
 function posicionarMenu() {
-    var altura_del_header = $('.bar_nav').outerHeight(true);
-    var altura_del_menu = $('#bar_bread').outerHeight(true);
+    var altura_del_menu = $('.bar_nav').outerHeight(true);
 
-    if ($(window).scrollTop() >= altura_del_header) {
+    if ($(window).scrollTop() >= altura_del_menu) {
 
         $('#bar_bread').css('position', 'fixed');
         $('#bar_bread').css('top', '0');

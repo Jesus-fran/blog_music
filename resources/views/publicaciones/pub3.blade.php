@@ -5,7 +5,7 @@
 
 @section('breadcrumbs')
 <!-- Breadcrumbs -->
-{{ Breadcrumbs::render('/publicacion') }}
+{{ Breadcrumbs::render('/publicaciones') }}
 @endsection
 @section('contenido')
 
@@ -52,8 +52,8 @@
 
         
         <script src="{{ asset('js/crear_editor_comentario.js') }}"></script>
-        <script src="{{ asset('js/subir_comentario.js') }}"></script>
-        <script src="{{ asset('js/obtener_comentarios.js') }}"></script>
+        <script src="{{ asset('js/async_subir_comentario.js') }}"></script>
+        <script src="{{ asset('js/async_obtener_comentarios.js') }}"></script>
 
     
 </div>

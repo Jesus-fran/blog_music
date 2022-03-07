@@ -5,7 +5,7 @@
 
 @section('breadcrumbs')
 <!-- Breadcrumbs -->
-{{ Breadcrumbs::render('/publicacion') }}
+{{ Breadcrumbs::render('/publicaciones') }}
 @endsection
 @section('contenido')
 
