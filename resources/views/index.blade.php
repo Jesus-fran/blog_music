@@ -40,6 +40,8 @@
 
         @section('contenido')
             <br>
+            <br>
+
             <img src="{{ asset('img/banner2.jpg') }}" class="banner" alt="banner1" id="banner_2">
             <p class="text">
                 En este blog puedes encontrar publicaciones de los distintos tipos de música.

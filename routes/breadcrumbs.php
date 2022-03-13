@@ -41,31 +41,31 @@ Breadcrumbs::for('/registrarse', function (BreadcrumbTrail $trail) {
 
 // ADMINISTRACIÓN
 
-// Home > Mi cuenta > Panel administracion    
+// Home >  Panel administracion    
 Breadcrumbs::for('/administracion', function (BreadcrumbTrail $trail) {
     $trail->parent('home');
     $trail->push('Panel administracion', route('administracion'));
 });
 
-// Home > Mi cuenta > Administracion > Admin redactores    
+// Home >  Administracion > Admin redactores    
 Breadcrumbs::for('/admin-redactores', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
     $trail->push('Administrar redactores', route('admin-redactores'));
 });
 
-// Home > Mi cuenta > Administracion > Admin lectores    
+// Home >  Administracion > Admin lectores    
 Breadcrumbs::for('/admin-lectores', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
     $trail->push('Administrar lectores', route('admin-lectores'));
 });
 
-// Home > Mi cuenta > Administracion > Admin publicaciones  
+// Home >  Administracion > Admin publicaciones  
 Breadcrumbs::for('/admin-publicaciones', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
     $trail->push('Administrar posts', route('admin-publicaciones'));
 });
 
-// Home > Mi cuenta > Administracion > Admin comentarios    
+// Home > Administracion > Admin comentarios    
 Breadcrumbs::for('/admin-comentarios', function (BreadcrumbTrail $trail) {
     $trail->parent('/administracion');
     $trail->push('Administrar comentarios', route('admin-comentarios'));

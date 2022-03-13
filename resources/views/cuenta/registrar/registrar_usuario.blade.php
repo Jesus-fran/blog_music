@@ -17,7 +17,7 @@
 
                 <br><br><br>
                 <div class="card text-center">
-                    <form action="{{ route('registrar-usuario') }}" method="POST">
+                    <form action="{{ route('registrar-usuario') }}" method="POST" id="registrarse">
 
                         {{ csrf_field() }}
 
@@ -165,7 +165,7 @@
 
                         </div>
                         <div class="card-footer text-muted">
-                            <button class="btn btn-primary" type="submit">Finalizar registro
+                            <button class="btn btn-primary" type="submit" id="btn_registrarse">Finalizar registro
                             </button>
                             <br><br>
                             <div class="row">
@@ -182,6 +182,7 @@
             </div>
         </div>
 
+        <script src="{{ asset('js/des_btn.js') }}"></script>
 
     </div>
 @endsection

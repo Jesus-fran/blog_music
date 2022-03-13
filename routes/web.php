@@ -8,6 +8,9 @@ use App\Http\Controllers\GetViewsController;
 use App\Http\Controllers\SubirPublic;
 use App\Http\Controllers\SubirComentario;
 use App\Http\Controllers\ObtenerComentarios;
+use App\Http\Controllers\ObtenerPublicaciones;
+use Illuminate\Auth\Middleware\AdminMiddleware;
+
 
 // Home
 Route::get('/', [GetViewsController:: class, 'ViewHome'])->name('home');
@@ -22,11 +25,13 @@ Route::get('registrarse/{registro?}', [FormValidationController:: class, 'GetVie
 Route::post('registrar-usuario', [FormValidationController:: class, 'UserForm'])->name('registrar-usuario');
 
 Route::post('iniciar-sesion', [FormValidationController:: class, 'IniciarSesion'])->name('iniciar-sesion');
+Route::get('iniciar-sesion/{status?}', [GetViewsController:: class, 'ViewLoginFallo'])->name('iniciar-sesion');
+Route::get('cerrar-sesion', [FormValidationController:: class, 'CerrarSesion'])->name('cerrar-sesion');
 
 // Publicaciones
 Route::get('publicaciones', [GetViewsController:: class, 'ViewPublicaciones'])->name('publicaciones');
-
-Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion');
+Route::post('obtener-publicaciones', [ObtenerPublicaciones:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones');
+Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion')->middleware('redactor');;
 
 Route::post('/guardar-publicacion', [SubirPublic:: class, 'Guardar'])->name('guardar-publicacion');
 
@@ -35,11 +40,11 @@ Route::post('/guardar-comentario', [SubirComentario:: class, 'Guardar'])->name('
 Route::post('/obtener-comentarios', [ObtenerComentarios:: class, 'Obtener'])->name('obtener-comentarios');
 
 // Administracion
-Route::get('administracion', [GetViewsController:: class, 'ViewAdministracion'])->name('administracion');
-Route::get('admin-redactores', [GetViewsController:: class, 'ViewAdminRedactores'])->name('admin-redactores');
-Route::get('admin-lectores', [GetViewsController:: class, 'ViewAdminLectores'])->name('admin-lectores');
-Route::get('admin-publicaciones', [GetViewsController:: class, 'ViewAdminPublicaciones'])->name('admin-publicaciones');
-Route::get('admin-comentarios', [GetViewsController:: class, 'ViewAdminComentarios'])->name('admin-comentarios');
+Route::get('administracion', [GetViewsController:: class, 'ViewAdministracion'])->name('administracion')->middleware('admin');
+Route::get('admin-redactores', [GetViewsController:: class, 'ViewAdminRedactores'])->name('admin-redactores')->middleware('admin');;
+Route::get('admin-lectores', [GetViewsController:: class, 'ViewAdminLectores'])->name('admin-lectores')->middleware('admin');;
+Route::get('admin-publicaciones', [GetViewsController:: class, 'ViewAdminPublicaciones'])->name('admin-publicaciones')->middleware('admin');;
+Route::get('admin-comentarios', [GetViewsController:: class, 'ViewAdminComentarios'])->name('admin-comentarios')->middleware('admin');;
 
 // Errores
 Route::get('/401', function () {

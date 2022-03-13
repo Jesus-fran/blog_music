@@ -11,12 +11,21 @@ body {
 }
 
 .contenedor_nav {
-    background-color: rgba(252, 252, 252, 0.932);
+    background-color: #151515;
     padding: 0;
 }
 
 .contenedor {
     background-color: rgba(252, 252, 252, 0.932);
+}
+
+.card-body {
+    overflow: hidden;
+}
+
+.card-text {
+    font-size: 13pt;
+    text-align: justify;
 }
 
 #home {
@@ -33,6 +42,8 @@ body {
 }
 
 .bar_nav {
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
     /* min-width: 100%; */
     background: rgb(33, 33, 33);
     background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
@@ -182,8 +193,17 @@ p {
     height: 240px;
 }
 
+.img_pub {
+    height: 185px;
+    min-height: 185px;
+    /* background-color: #6ddf69; */
+    width: auto;
+    overflow: hidden;
+}
+
 .imagen_posts {
-    height: 250px;
+    height: 185px;
+    max-width: auto;
 }
 
 .contenedor_foot {
@@ -210,4 +230,33 @@ p {
 
 .editor {
     width: inherit;
+}
+
+.spinner_publicando {
+    color: rgba(50, 15, 88, 0.89);
+}
+
+.publicando {
+    text-align: center;
+    color: #262626;
+}
+
+.spiner_1 {
+    color: #7230db;
+}
+
+.spiner_2 {
+    color: #22287e;
+}
+
+.spiner_3 {
+    color: #022081;
+}
+
+.spiner_4 {
+    color: #19705a;
+}
+
+.spiner_5 {
+    color: #36a769;
 }

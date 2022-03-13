@@ -16,6 +16,11 @@ class GetViewsController extends Controller
         return view('cuenta.mi_cuenta');
     }
 
+    public function ViewLoginFallo($status)
+    {
+        return view('cuenta.mi_cuenta', compact('status'));
+    }
+
     public function ViewRegistrarse()
     {
         return view('cuenta.registrar.registrar_usuario');

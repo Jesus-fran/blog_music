@@ -47,11 +47,37 @@ class FormValidationController extends Controller
     $credenciales = ['email'=>$email_req,'password'=>$pass_req];
     
     if(Auth::attempt($credenciales)){
-      return "Logueado exisitosamente";
+      $tipo_user_logueado = Auth::user()->tipo;
+      $datos_sesion = ['email'=>$email_req, 'nombre'=>Auth::user()->nombre, 'tipo'=>$tipo_user_logueado];
+      
+      if ($tipo_user_logueado == 'REDACTOR') {
+        session()->flush();
+        session()->regenerate();
+        session($datos_sesion);
+        return redirect()->route('crear-publicacion');
+      }
+      elseif ($tipo_user_logueado == 'LECTOR') {
+        session()->flush();
+        session()->regenerate();
+        session($datos_sesion);
+        return redirect()->route('publicaciones');
+      }
+      elseif ($tipo_user_logueado == 'ADMIN') {
+        session()->flush();
+        session()->regenerate();
+        session($datos_sesion);
+        return redirect()->route('administracion');
+      }
     }
-    return "FALLO";
+    return redirect()->route('iniciar-sesion', ['status'=>'false']);
 
   }
-      
-     
+  
+  public function CerrarSesion()
+  {
+    Auth::logout();
+    session()->flush();
+    return redirect()->route('mi-cuenta');
+  }
+  
 }
