@@ -4,10 +4,11 @@
             <a class="navbar-brand" href="{{ route('home') }}">
                 <div id="home"> <i class="bi bi-music-note-beamed"></i> 𝑴ú𝒔𝒊𝒄𝒂</div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#opciones"
+            <button class="navbar-toggler btn_nav" type="button" data-bs-toggle="collapse" data-bs-target="#opciones"
                 aria-controls="opciones" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+               <i class="bi bi-list"></i>
             </button>
+            
             <div class="collapse navbar-collapse" id="opciones">
                 <div class="container-fluid">
                     <div class="row">
