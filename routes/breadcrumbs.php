@@ -18,6 +18,12 @@ Breadcrumbs::for('/publicaciones', function (BreadcrumbTrail $trail) {
     $trail->push('Publicaciones', route('publicaciones'));
 });
 
+// Home > Publicaciones/nombre de publicacion
+Breadcrumbs::for('/publicacion', function (BreadcrumbTrail $trail, $id, $titulo) {
+    $trail->parent('/publicaciones');
+    $trail->push($titulo, route('publicaciones', ['id'=>$id]));
+});
+
 // Home > Publicaciones > Crear publicación
 Breadcrumbs::for('/crear-publicacion', function (BreadcrumbTrail $trail) {
     $trail->parent('home');

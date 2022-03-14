@@ -4,7 +4,7 @@ $(document).ready(function() {
     var id_publicacion = "1";
 
     var token = $('input[name="_token"]').val();
-    console.log(token);
+    // console.log(token);
 
     if (id_publicacion != "" && id_publicacion != null) {
         $.ajax({

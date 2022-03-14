@@ -3,25 +3,33 @@
 
 @section('breadcrumbs')
     <!-- Breadcrumbs -->
-    {{-- {{ Breadcrumbs::render('/pub') }} --}}
+    {{ Breadcrumbs::render('/publicacion', $id, $titulo) }}
 @endsection
 @section('contenido')
     <div class="container">
 
         @csrf
 
-        <br><br><br>
-        <h4>Festival de música</h4>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-        </p>
-        <br><br><br>
+        <br>
+        <h4>
+            @isset($titulo)
+                {{ $titulo }}
+            @endisset
+        </h4>
         <br><br>
-        <h4>Ingrese un comentario</h4>
+        @isset($imagen)
+            <img src="{{ $imagen }}" class="img-fluid rounded mx-auto d-block img_post" alt="" srcset="">
+        @endisset
+        <br><br><br>
+        @isset($contenido)
+            {!! $contenido !!}
+        @endisset
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h5>Comentarios</h5>
         <br><br><br>
         <div id="comentarios" style="display:none;">
             {{-- Aqui se agregan los comentarios --}}
@@ -40,6 +48,7 @@
         <script src="{{ asset('minified/formats/xhtml.js') }}"></script>
 
         <br><br><br>
+        <h5>Ingrese un comentario</h5>
         <textarea name="comentario" id="comentario" cols="80" rows="15"></textarea>
         <br>
         <div class="row">
@@ -51,7 +60,7 @@
         <br><br><br>
         <br><br><br>
 
-        <script src="{{ asset('js/crear_editor_comentario.js') }}"></script>
+        {{-- <script src="{{ asset('js/crear_editor_comentario.js') }}"></script> --}}
         <script src="{{ asset('js/async_subir_comentario.js') }}"></script>
         <script src="{{ asset('js/async_obtener_comentarios.js') }}"></script>
 

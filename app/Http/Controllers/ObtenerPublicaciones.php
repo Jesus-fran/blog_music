@@ -12,32 +12,44 @@ class ObtenerPublicaciones extends Controller
         $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->get();
         $publicaciones = "";
 
+        if ($publicacion->isEmpty()) {
+            return "<br><h5>Ninguna publicación</h5><br><br><br><br><br><br><br><br><br><br><br><br>";
+        } else {
+            foreach ($publicacion as $dato) {
+                $usuario = DB::table('usuarios')->select('nombre')->where('email','=', $dato->email_redactor)->get();
+                if ($usuario->isEmpty()) {
+                    
+                    return "<br><h5>Hubo un error</h5><br><br><br><br><br><br><br><br><br><br><br><br>";
+                    
+                }else{
+                    $img = asset($dato->imagen);
+                
+                    $url = url('publicaciones', ['id'=>$dato->id]);
+                    $public = "<div class=\"col\">
+                    <div class=\"card card_pub\" style=\"width: 18rem; height:26rem;\">
+                    <div class=\"img_pub\">
+                    <img src=\"".$img."\" class=\"card-img-top imagen_posts\" alt=\"...\">
+                    </div>
+                    <div class=\"card-body\">
+                    <a href=\"".$url."\") }}\">
+                        <h6 class=\"card-title\">".$dato->titulo."</h6>
+                    </a>
+                    <p class=\"card-text\">".$dato->contenido."</p>
+                    </div>
+                    <div class=\"card-footer\">
+                    <small class=\"text-muted\">Auto: 
+                        ".$usuario[0]->nombre." | Fecha ".$dato->created_at."
+                    </small>
+                    </div>
+                    </div>
+                    </div>";
+                    $publicaciones .= $public;
+                }
+            }
 
-        foreach ($publicacion as $dato) {
-            $img = asset($dato->imagen);
-            
-            
-            $public = "<div class=\"col\">
-            <div class=\"card\" style=\"width: 18rem; height:26rem;\">
-            <div class=\"img_pub\">
-            <img src=\"".$img."\" class=\"card-img-top imagen_posts\" alt=\"...\">
-            </div>
-             <div class=\"card-body\">
-               <a href=\"{{ url('/pub1') }}\">
-                   <h6 class=\"card-title\">".$dato->titulo."</h6>
-               </a>
-               <p class=\"card-text\">".$dato->contenido."</p>
-            </div>
-            <div class=\"card-footer\">
-               <small class=\"text-muted\">
-                   ".$dato->email_redactor." | ".$dato->created_at."
-               </small>
-            </div>
-            </div>
-            </div>";
-            $publicaciones .= $public;
         }
 
+        
 
         return $publicaciones;
     }

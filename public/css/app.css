@@ -33,7 +33,7 @@ body {
     font-size: 25px;
     letter-spacing: 0.6px;
     word-spacing: -5px;
-    color: #7230db;
+    color: #eeeeee;
     font-weight: 400;
     text-decoration: none;
     font-style: normal;
@@ -196,7 +196,6 @@ p {
 .img_pub {
     height: 185px;
     min-height: 185px;
-    /* background-color: #6ddf69; */
     width: auto;
     overflow: hidden;
 }
@@ -206,14 +205,18 @@ p {
     max-width: auto;
 }
 
+.img_post {
+    max-width: 300px;
+    height: auto;
+}
+
 .contenedor_foot {
-    background-color: rgba(252, 252, 252, 0.932);
     padding: 0;
 }
 
 .card_pub:hover {
-    background-color: #cecece;
-    margin: 4px;
+    background-color: #ffffff;
+    margin: 2px;
 }
 
 .card_admin:hover {

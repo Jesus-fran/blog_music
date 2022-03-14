@@ -30,6 +30,7 @@ Route::get('cerrar-sesion', [FormValidationController:: class, 'CerrarSesion'])-
 
 // Publicaciones
 Route::get('publicaciones', [GetViewsController:: class, 'ViewPublicaciones'])->name('publicaciones');
+Route::get('publicaciones/{id}', [GetViewsController:: class, 'ViewPublicacion'])->name('publicacion');
 Route::post('obtener-publicaciones', [ObtenerPublicaciones:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones');
 Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion')->middleware('redactor');;
 
