@@ -24,6 +24,7 @@ class IniciarSesionRequest extends FormRequest
      */
     public function rules()
     {
+        // $this->redirect = url('iniciar-sesion/false');
         return [
             'correo' => 'required|email||min:6|max:50',
             'password' => ['required','max:30', Password::min(8)->letters()->mixedCase()->numbers()->symbols()->uncompromised()],

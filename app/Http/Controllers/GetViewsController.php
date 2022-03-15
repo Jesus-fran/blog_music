@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use function PHPUnit\Framework\isEmpty;
 
 class GetViewsController extends Controller
 {
@@ -14,19 +13,44 @@ class GetViewsController extends Controller
         return view('index');
     }
 
-    public function ViewMiCuenta()
+    public function ViewMiCuenta(Request $request)
     {
-        return view('cuenta.mi_cuenta');
+        if ($request->has('redirect_to')) {
+            session()->put('redirect_to', $request->redirect_to);
+            if ($request->has('registro')) {
+                $registro = $request->registro;
+                return view('cuenta.mi_cuenta', compact('registro'));
+            }
+
+            if ($request->has('status')) {
+                $status = $request->status;
+                return view('cuenta.mi_cuenta', compact('status'));
+            }
+            return view('cuenta.mi_cuenta');
+        } else {
+            session()->forget('redirect_to');
+            if ($request->has('registro')) {
+                $registro = $request->registro;
+                return view('cuenta.mi_cuenta', compact('registro'));
+            }
+
+            if ($request->has('status')) {
+                $status = $request->status;
+                return view('cuenta.mi_cuenta', compact('status'));
+            }
+            return view('cuenta.mi_cuenta');
+        }
     }
 
-    public function ViewLoginFallo($status)
+    public function ViewRegistrarse(Request $request)
     {
-        return view('cuenta.mi_cuenta', compact('status'));
-    }
-
-    public function ViewRegistrarse()
-    {
-        return view('cuenta.registrar.registrar_usuario');
+        if ($request->has('redirect_to')) {
+            $redirect_to = $request->redirect_to;
+            return view('cuenta.registrar.registrar_usuario', compact('redirect_to'));
+        } else {
+            session()->forget('redirect_to');
+            return view('cuenta.registrar.registrar_usuario');
+        }
     }
 
     public function ViewPublicaciones()
@@ -51,7 +75,7 @@ class GetViewsController extends Controller
             $tags = $publicacion[0]->tags;
             $created_at = $publicacion[0]->created_at;
             $updated_at = $publicacion[0]->updated_at;
-            return view('publicaciones.new_publicacion', compact('id', 'titulo', 'imagen','contenido','tags','created_at','updated_at'));
+            return view('publicaciones.new_publicacion', compact('id', 'titulo', 'imagen', 'contenido', 'tags', 'created_at', 'updated_at'));
         }
     }
 

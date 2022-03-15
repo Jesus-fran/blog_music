@@ -17,15 +17,9 @@ Route::get('/', [GetViewsController:: class, 'ViewHome'])->name('home');
 
 // Mi cuenta
 Route::get('mi-cuenta', [GetViewsController:: class, 'ViewMiCuenta'])->name('mi-cuenta');
-
-Route::get('registrarse', [GetViewsController:: class, 'ViewRegistrarse'])->name('registrarse');
-
-Route::get('registrarse/{registro?}', [FormValidationController:: class, 'GetViewRegistrarse'])->name('registrarse');
-
-Route::post('registrar-usuario', [FormValidationController:: class, 'UserForm'])->name('registrar-usuario');
-
 Route::post('iniciar-sesion', [FormValidationController:: class, 'IniciarSesion'])->name('iniciar-sesion');
-Route::get('iniciar-sesion/{status?}', [GetViewsController:: class, 'ViewLoginFallo'])->name('iniciar-sesion');
+Route::get('registrarse', [GetViewsController:: class, 'ViewRegistrarse'])->name('registrarse');
+Route::post('registrar-usuario', [FormValidationController:: class, 'UserForm'])->name('registrar-usuario');
 Route::get('cerrar-sesion', [FormValidationController:: class, 'CerrarSesion'])->name('cerrar-sesion');
 
 // Publicaciones
@@ -33,7 +27,6 @@ Route::get('publicaciones', [GetViewsController:: class, 'ViewPublicaciones'])->
 Route::get('publicaciones/{id}', [GetViewsController:: class, 'ViewPublicacion'])->name('publicacion');
 Route::post('obtener-publicaciones', [ObtenerPublicaciones:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones');
 Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion')->middleware('redactor');;
-
 Route::post('/guardar-publicacion', [SubirPublic:: class, 'Guardar'])->name('guardar-publicacion');
 
 // Comentarios

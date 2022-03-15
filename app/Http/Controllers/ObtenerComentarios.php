@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comentario;
 use Illuminate\Http\Request;
 
 class ObtenerComentarios extends Controller
 {
     public function Obtener(Request $request){
+
+
+        $comentario = new Comentario();
 
         if($request['id_publicacion']){
 

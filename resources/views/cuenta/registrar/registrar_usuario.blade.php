@@ -17,7 +17,12 @@
 
                 <br><br><br>
                 <div class="card text-center">
+
+                    @if (isset($redirect_to))
+                    <form action="{{ route('registrar-usuario', ['redirect_to'=>$redirect_to]) }}" method="POST" id="registrarse">
+                    @else
                     <form action="{{ route('registrar-usuario') }}" method="POST" id="registrarse">
+                    @endif
 
                         {{ csrf_field() }}
 
@@ -27,15 +32,13 @@
 
                         <div class="card-body">
 
-                            @isset($registro)
-                                @if ($registro == 'true')
+                            {{-- @isset($status)
+                                @if ($status == 'true')
                                     <label class="form-label text-success bg-light h4">¡Registrado correctamente!</label><br>
                                     <label class="form-label text-success bg-light h6">Ya puedes <a
                                             href="{{ route('mi-cuenta') }}">Iniciar sesión</a></label><br>
                                 @endif
-                            @endisset
-
-
+                            @endisset --}}
                             <label for="inputEmail4" class="form-label">Ingresa tu información personal
                             </label>
 

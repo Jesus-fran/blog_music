@@ -49,12 +49,21 @@
 
         <br><br><br>
         <h5>Ingrese un comentario</h5>
-        <textarea name="comentario" id="comentario" cols="80" rows="15"></textarea>
+        <div class="form-group">
+            @if (session('email'))
+                <textarea class="form-control comentario" id="comentario" rows="6"></textarea>
+            @else
+                <a href="{{ route('mi-cuenta', ['redirect_to'=>url()->current()]) }}" style="text-decoration: none">
+                    <textarea class="form-control comentario" id="comentario" rows="6"
+                        placeholder="Inicie sesión primero para comentar, ¡Click aqui!"></textarea>
+                </a>
+            @endif
+        </div>
         <br>
         <div class="row">
-            <div class="col"><button id="saveComent" class="btn btn-success">Subir comentario</button></div>
+            <div class="col"><button id="saveComent" class="btn btn-success" data-id="{{ $id }}">Subir
+                    comentario</button></div>
             <h5 id="message_error" style="text-align:center; display:none;"></h5>
-
         </div>
         <br><br><br>
         <br><br><br>
