@@ -9,6 +9,7 @@
     <div class="container">
 
         @csrf
+        <input type="hidden" id="id_pub" data-id="{{$id}}">
 
         <br>
         <h4>
@@ -16,6 +17,18 @@
                 {{ $titulo }}
             @endisset
         </h4>
+        <div class="row">
+            <div class="col text-start">
+                Categoria:&nbsp &nbsp<span class="{{$color_categoria}}">{{$categoria}}</span>
+            </div>
+            <div class="col text-center">
+            Autor: <b> {{$nombre_autor}}</b>
+            </div>
+            <div class="col text-end">
+                Fecha : <b>{{$fecha_creacion}}</b>
+            </div>
+        </div>
+         
         <br><br>
         @isset($imagen)
             <img src="{{ $imagen }}" class="img-fluid rounded mx-auto d-block img_post" alt="" srcset="">
@@ -29,25 +42,6 @@
         <br>
         <br>
         <br>
-        <h5>Comentarios</h5>
-        <br><br><br>
-        <div id="comentarios" style="display:none;">
-            {{-- Aqui se agregan los comentarios --}}
-        </div>
-
-        <br><br>
-        {{-- incluye editor de texto --}}
-        <!-- Include the default theme -->
-        <link rel="stylesheet" href="{{ asset('minified/themes/default.min.css') }}" />
-
-        <!-- Include the editors JS -->
-        <script src=" {{ asset('minified/sceditor.min.js') }}"></script>
-
-        <!-- Include the BBCode or XHTML formats -->
-        <script src="{{ asset('minified/formats/bbcode.js') }}"></script>
-        <script src="{{ asset('minified/formats/xhtml.js') }}"></script>
-
-        <br><br><br>
         <h5>Ingrese un comentario</h5>
         <div class="form-group">
             @if (session('email'))
@@ -66,12 +60,40 @@
             <h5 id="message_error" style="text-align:center; display:none;"></h5>
         </div>
         <br><br><br>
+        
+        <h5>Comentarios</h5>
         <br><br><br>
-        <br><br><br>
+        <div id="div_animacion">
+            <div class="row lign-items-center" id="animacion">
+                <div class="col offset-md-5 offset-sm-4 offset-3">
+                    <div class="spinner-grow spiner_1" role="status">
+                        
+                    </div>
+                    <div class="spinner-grow spiner_2" role="status">
+                      
+                    </div>
+                    <div class="spinner-grow spiner_3" role="status">
+                        
+                    </div>
+                    <div class="spinner-grow spiner_4" role="status">
+                       
+                    </div>
+                    <div class="spinner-grow spiner_5" role="status">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="comentarios" style="display: none">
+            {{-- Aqui se agregan los comentarios --}}
+        </div>
 
-        {{-- <script src="{{ asset('js/crear_editor_comentario.js') }}"></script> --}}
-        <script src="{{ asset('js/async_subir_comentario.js') }}"></script>
+        <br><br><br>
+        <br><br>
+        
         <script src="{{ asset('js/async_obtener_comentarios.js') }}"></script>
+        <script src="{{ asset('js/async_subir_comentario.js') }}"></script>
+        <script src="{{ asset('js/subir_respuesta.js') }}"></script>
 
 
 

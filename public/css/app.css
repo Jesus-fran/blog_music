@@ -270,3 +270,15 @@ p {
 .spiner_5 {
     color: #36a769;
 }
+
+.card_body {
+    background-color: #8bff7677
+}
+
+.text_respuesta {
+    margin-top: 10px;
+}
+
+.music_instr {
+    background-color: #F8C154;
+}

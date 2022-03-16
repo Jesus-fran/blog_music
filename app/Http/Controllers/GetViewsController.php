@@ -65,17 +65,42 @@ class GetViewsController extends Controller
 
     public function ViewPublicacion($id)
     {
-        $publicacion = DB::table('posts')->select('titulo', 'contenido', 'imagen', 'tags', 'created_at', 'updated_at')->where('id', '=', $id)->get();
+        $publicacion = DB::table('posts')->select('titulo', 'email_redactor', 'categoria', 'contenido', 'imagen', 'tags', 'created_at', 'updated_at')->where('id', '=', $id)->get();
         if ($publicacion->isEmpty()) {
             return redirect(404);
         } else {
             $titulo = $publicacion[0]->titulo;
+            $email_redactor = $publicacion[0]->email_redactor;
+            $nombre_autor = "";
+            $usuario = DB::table('usuarios')->select('nombre')->where('email', '=', $email_redactor)->get();
+            if ($usuario->isEmpty()) {
+
+                return "<br><h5>Hubo un error</h5><br><br><br><br><br><br><br><br><br><br><br><br>";
+            
+            } else {
+
+                $nombre_autor = $usuario[0]->nombre;
+
+            }
+            $categoria = $publicacion[0]->categoria;
+            $color_categoria = "";
+            if ($categoria == 'CONCIERTOS') {
+                $color_categoria = "badge bg-light text-dark";
+            } elseif ($categoria == "MUSICA POPULAR MODERNA") {
+                $color_categoria = "badge bg-info text-dark";
+            } elseif ($categoria == "MUSICA INSTRUMENTAL") {
+                $color_categoria = "badge music_instr text-dark";
+            } elseif ($categoria == "MUSICA REGIONAL") {
+                $color_categoria == "badge bg-primary";
+            }
+
             $contenido = $publicacion[0]->contenido;
             $imagen = asset($publicacion[0]->imagen);
             $tags = $publicacion[0]->tags;
             $created_at = $publicacion[0]->created_at;
+            $fecha_creacion = date('d-m-Y', strtotime($created_at));
             $updated_at = $publicacion[0]->updated_at;
-            return view('publicaciones.new_publicacion', compact('id', 'titulo', 'imagen', 'contenido', 'tags', 'created_at', 'updated_at'));
+            return view('publicaciones.new_publicacion', compact('id', 'nombre_autor', 'fecha_creacion' , 'titulo', 'categoria', 'color_categoria', 'imagen', 'contenido', 'tags', 'created_at', 'updated_at'));
         }
     }
 

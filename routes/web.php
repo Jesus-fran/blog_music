@@ -1,15 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\UserController;
 use App\Models\Usuario;
-use App\Http\Controllers\FormValidationController;
-use App\Http\Controllers\GetViewsController;
+// use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubirPublic;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SubirRespuesta;
 use App\Http\Controllers\SubirComentario;
+use App\Http\Controllers\GetViewsController;
 use App\Http\Controllers\ObtenerComentarios;
 use App\Http\Controllers\ObtenerPublicaciones;
 use Illuminate\Auth\Middleware\AdminMiddleware;
+use App\Http\Controllers\FormValidationController;
 
 
 // Home
@@ -32,7 +33,7 @@ Route::post('/guardar-publicacion', [SubirPublic:: class, 'Guardar'])->name('gua
 // Comentarios
 Route::post('/guardar-comentario', [SubirComentario:: class, 'Guardar'])->name('guardar_comentario');
 Route::post('/obtener-comentarios', [ObtenerComentarios:: class, 'Obtener'])->name('obtener-comentarios');
-
+Route::post('/guardar-respuesta', [SubirRespuesta:: class, 'Guardar'])->name('guardar-respuesta');
 // Administracion
 Route::get('administracion', [GetViewsController:: class, 'ViewAdministracion'])->name('administracion')->middleware('admin');
 Route::get('admin-redactores', [GetViewsController:: class, 'ViewAdminRedactores'])->name('admin-redactores')->middleware('admin');;

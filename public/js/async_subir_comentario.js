@@ -7,8 +7,8 @@ document.querySelector('#saveComent').addEventListener("click", function() {
     var id_pub = $('#saveComent').data('id');
     var comentario = $('#comentario').val();
     var token = $('input[name="_token"]').val();
-    console.log(token);
-    console.log(id_pub);
+    // console.log(token);
+    // console.log(id_pub);
 
 
 
@@ -21,7 +21,7 @@ document.querySelector('#saveComent').addEventListener("click", function() {
     }
 
     if (comentario != "" && comentario != null) {
-        console.log(comentario);
+        // console.log(comentario);
         $.ajax({
             url: '/guardar-comentario',
             async: true,
@@ -78,14 +78,23 @@ document.querySelector('#saveComent').addEventListener("click", function() {
 
                     }
                 } else {
-                    console.log(XHR);
+                    // console.log(XHR);
                     $('#span_btn_comentario').remove();
                     $('#saveComent').removeAttr('disabled');
                     $('#message_error').html("");
                     document.getElementById("comentario").value = "";
                     $('#message_error').attr('class', 'text-success bg-light');
-                    $('#message_error').html('Publicación realizada correctamente');
+                    $('#message_error').html('comentario realizado correctamente');
                     $('#message_error').show('slow');
+                    var comentarios = document.getElementById('comentarios');
+                    setTimeout(() => {
+                        while (comentarios.firstChild) {
+                            comentarios.removeChild(comentarios.firstChild);
+                        }
+                        $('#div_animacion').append("<div class='row lign-items-center' id='animacion'><div class = 'col offset-md-5 offset-sm-4 offset-3' ><div class = 'spinner-grow spiner_1'role = 'status' ></div> <div class = 'spinner-grow spiner_2'role = 'status' ></div> <div class = 'spinner-grow spiner_3'role = 'status' ></div> <div class = 'spinner-grow spiner_4'role = 'status' ></div> <div class = 'spinner-grow spiner_5'role = 'status' ></div> </div> </div>");
+                        obtener_comentarios();
+                        $('#message_error').hide('slow');
+                    }, 2000);
                 }
 
 
