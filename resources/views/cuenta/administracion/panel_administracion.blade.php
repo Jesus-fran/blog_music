@@ -61,7 +61,7 @@
                     <img src="{{asset('img/admin_comentarios_2.jpg')}}" class="card-img-top img_admin" alt="...">
                     <div class="card-body">
                 
-                      <h5 class="card-title">Comentarios</h5>
+                      <h5 class="card-title">Comentarios y respuestas</h5>
                       <p class="card-text">Elimina comentarios o respuestas de los posts.</p>
                       <a href="{{ route('admin-comentarios') }}" class="btn btn-primary">Administrar comentarios</a>
                     </div>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ObtenerPublicaciones extends Controller
+class ObtenerPostsAdmin extends Controller
 {
     public function ObtenerPublicacion()
     {
@@ -23,21 +23,20 @@ class ObtenerPublicaciones extends Controller
                 } else {
                     $img = asset($dato->imagen);
 
-                    $url = url('publicaciones', ['id' => $dato->id]);
                     $public = "<div class=\"col\">
                     <div class=\"card card_pub\" style=\"width: 18rem; height:26rem;\">
                     <div class=\"img_pub\">
                     <img src=\"" . $img . "\" class=\"card-img-top imagen_posts\" alt=\"...\">
                     </div>
                     <div class=\"card-body\">
-                    <a href=\"" . $url . "\") }}\">
+                   
                         <h6 class=\"card-title\">" . $dato->titulo . "</h6>
-                    </a>
+                    
                     <p class=\"card-text\">" . $dato->contenido . "</p>
                     </div>
                     <div class=\"card-footer\">
-                    <small class=\"text-muted\">Auto: 
-                        " . $usuario[0]->nombre . " | Fecha " . $dato->created_at . "
+                    <small class=\"text-muted\">
+                    <button class=\"btn btn-warning\" data-id=\"$dato->id\" onclick=\"EliminarPost(this)\" role=\"button\">Eliminar</button>
                     </small>
                     </div>
                     </div>
@@ -48,5 +47,32 @@ class ObtenerPublicaciones extends Controller
 
             return $publicaciones;
         }
+    }
+
+    public function Eliminar(Request $request)
+    {
+        $comentarios= DB::table('comentarios')->where('id_post', '=', $request->id_post)->get();
+        if ($comentarios->isEmpty()) {
+
+            $posts_eliminados = DB::table('posts')->where('id', '=', $request->id_post)->delete();
+            if($posts_eliminados == 1){
+                return "ELIMINADO";
+            }
+            
+        }else{
+
+            foreach ($comentarios as $key => $valor) {
+                $id_comentario = $valor->id;   
+
+                $resp_eliminado = DB::table('respuestas')->where('id_comentario', '=', $id_comentario)->delete();
+
+            }
+            $coment_eliminado = DB::table('comentarios')->where('id_post', '=', $request->id_post)->delete();
+            $posts_eliminados = DB::table('posts')->where('id', '=', $request->id_post)->delete();
+            if($posts_eliminados == 1){
+                return "ELIMINADO";
+            }
+        }
+       
     }
 }

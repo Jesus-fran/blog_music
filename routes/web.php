@@ -4,14 +4,19 @@ use App\Models\Usuario;
 // use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubirPublic;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EliminarLector;
 use App\Http\Controllers\SubirRespuesta;
+use App\Http\Controllers\ObtenerLectores;
 use App\Http\Controllers\SubirComentario;
+use App\Http\Controllers\AdminComentarios;
+use App\Http\Controllers\EliminarRedactor;
+use App\Http\Controllers\ObtenerPostsAdmin;
+use App\Http\Controllers\ObtenerRedactores;
 use App\Http\Controllers\GetViewsController;
 use App\Http\Controllers\ObtenerComentarios;
 use App\Http\Controllers\ObtenerPublicaciones;
 use Illuminate\Auth\Middleware\AdminMiddleware;
 use App\Http\Controllers\FormValidationController;
-
 
 // Home
 Route::get('/', [GetViewsController:: class, 'ViewHome'])->name('home');
@@ -27,9 +32,10 @@ Route::get('cerrar-sesion', [FormValidationController:: class, 'CerrarSesion'])-
 Route::get('publicaciones', [GetViewsController:: class, 'ViewPublicaciones'])->name('publicaciones');
 Route::get('publicaciones/{id}', [GetViewsController:: class, 'ViewPublicacion'])->name('publicacion');
 Route::post('obtener-publicaciones', [ObtenerPublicaciones:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones');
+Route::post('obtener-publicaciones-admin', [ObtenerPostsAdmin:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones-admin');
 Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion')->middleware('redactor');;
 Route::post('/guardar-publicacion', [SubirPublic:: class, 'Guardar'])->name('guardar-publicacion');
-
+Route::post('eliminar-publicacion', [ObtenerPostsAdmin:: class, 'Eliminar'] )->name('eliminar-publicacion');
 // Comentarios
 Route::post('/guardar-comentario', [SubirComentario:: class, 'Guardar'])->name('guardar_comentario');
 Route::post('/obtener-comentarios', [ObtenerComentarios:: class, 'Obtener'])->name('obtener-comentarios');
@@ -39,7 +45,16 @@ Route::get('administracion', [GetViewsController:: class, 'ViewAdministracion'])
 Route::get('admin-redactores', [GetViewsController:: class, 'ViewAdminRedactores'])->name('admin-redactores')->middleware('admin');;
 Route::get('admin-lectores', [GetViewsController:: class, 'ViewAdminLectores'])->name('admin-lectores')->middleware('admin');;
 Route::get('admin-publicaciones', [GetViewsController:: class, 'ViewAdminPublicaciones'])->name('admin-publicaciones')->middleware('admin');;
-Route::get('admin-comentarios', [GetViewsController:: class, 'ViewAdminComentarios'])->name('admin-comentarios')->middleware('admin');;
+Route::get('admin-comentarios', [GetViewsController:: class, 'ViewAdminComentarios'])->name('admin-comentarios')->middleware('admin');
+Route::get('obtener-redactores', [ObtenerRedactores::class, 'Obtener'])->name('obtener-redactores');
+Route::post('eliminar-redactor', [EliminarRedactor::class, 'Eliminar'])->name('eliminar-redactor');
+Route::post('eliminar-lector', [EliminarLector::class, 'Eliminar'])->name('eliminar-lector');
+Route::get('obtener-lectores', [ObtenerLectores::class, 'Obtener'])->name('obtener-lectores');
+Route::get('obtener-comentarios-admin', [AdminComentarios::class, 'Obtener'])->name('obtener-comentarios-admin');
+Route::post('eliminar-comentarios', [AdminComentarios::class, 'EliminarComentario'])->name('eliminar-comentarios');
+Route::post('eliminar-respuestas', [AdminComentarios::class, 'EliminaRespuesta'])->name('eliminar-respuestas');
+
+
 
 // Errores
 Route::get('/401', function () {

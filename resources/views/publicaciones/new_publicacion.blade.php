@@ -93,7 +93,7 @@
         
         <script src="{{ asset('js/async_obtener_comentarios.js') }}"></script>
         <script src="{{ asset('js/async_subir_comentario.js') }}"></script>
-        <script src="{{ asset('js/subir_respuesta.js') }}"></script>
+        <script src="{{ asset('js/async_subir_respuesta.js') }}"></script>
 
 
 

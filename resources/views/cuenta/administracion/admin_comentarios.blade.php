@@ -5,256 +5,27 @@
 
 
 @section('breadcrumbs')
-<!-- Breadcrumbs -->
-{{ Breadcrumbs::render('/admin-comentarios') }}
+    <!-- Breadcrumbs -->
+    {{ Breadcrumbs::render('/admin-comentarios') }}
 @endsection
 @section('contenido')
+    <div class="container">
+        @csrf
 
-<div class="container">
 
-
-    <br><br><br>
-    <h5>Comentarios de posts</h5>
-    <br><br><br>
-    
-    <div class="row">
-        <div class="col-md-8">
-            <h4>Festival de música</h4>
-            <div class="card">
-                <div class="card-body">
-               
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Maria Hernandez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Juan Garcia</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ url('') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-               
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Luis Martinez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
+        <br><br><br>
+        <h5>Comentarios de posts</h5>
+        <br><br><br>
+        <h5 id="message_error" style="text-align:center; display:none;"></h5>
+        <div id="div_animacion">
         </div>
-    </div>
-
-    <br><br><br>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h4>  ¿Qué es la música clasica?</h4>
-            <div class="card">
-                <div class="card-body">
-               
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col"> Francisco Lopez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Jesus Gonzalez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-               
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Ana Perez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
+        <br><br><br>
+        
+        <div id="comentarios" style="display: none">
+            {{-- Aqui se agregan los comentarios --}}
         </div>
+        <script src="{{ asset('js/async_obtener_comentarios_admin.js') }}"></script>
+        <script src="{{ asset('js/async_admin_comentarios.js') }}"></script>
+
     </div>
-
-
-    <br><br><br>
-
-    <div class="row">
-        <div class="col-md-8">
-            <h4>Festival de música</h4>
-            <div class="card">
-                <div class="card-body">
-               
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Maria Hernandez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Juan Garcia</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-               
-                <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                    laborum..
-                </p>
-                
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                      <div class="row">
-                          <div class="col">Luis Martinez</div>
-                          <div class="col">
-                            
-                            <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                          </div>
-                      </div>
-                    </small>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
 @endsection

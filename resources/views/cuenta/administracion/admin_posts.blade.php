@@ -8,113 +8,42 @@
 <!-- Breadcrumbs -->
 {{ Breadcrumbs::render('/admin-publicaciones') }}
 @endsection
+
 @section('contenido')
+    <div class="container">
+        @csrf
 
-<br>
-<br>
-<br>
-
-<div class="container">
-    <h4>Posts recientes</h4>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card_pub h-100">
-            <img src="{{ asset('img/posts/1.webp') }}" class="card-img-top imagen_posts" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Festival de música</h5>
-              <p class="card-text">Mejores festivales de música del año 2021 en México. Descubrelos.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                </small>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card_pub h-100">
-            <img src="{{ asset('img/posts/2.webp') }}" class="card-img-top imagen_posts" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">La guitarra, ¿ un instrumento antiguo?</h5>
-              <p class="card-text">La guitarra es unos de los instrumentos más usados en todos los generos.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>  
-                </small>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card_pub h-100">
-            <img src="{{ asset('img/posts/3.webp') }}" class="card-img-top imagen_posts" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">¿Qué es la música clasica?</h5>
-              <p class="card-text">Se denomina música clásica a toda composición nacida en la era del clasismo del año 1,750 hasta el...</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                </small>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card_pub h-100">
-            <img src="{{ asset('img/posts/4.webp') }}" class="card-img-top imagen_posts" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Los mejores musicas de DJ</h5>
-              <p class="card-text">¿Quienes son los mejores DJ en el mundo y cuales son sus músicas?.</p>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                  <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
-                  <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                </small>
-            </div>
-          </div>
+        <h5>Posts recientes</h5>
+        <h5 id="message_error" style="text-align:center; display:none;"></h5>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 rows-cols-xs-1 g-4" id="row_publicaciones"
+            style="display: none">
         </div>
 
-        <div class="col">
-            <div class="card_pub h-100">
-              <img src="{{ asset('img/posts/5.webp') }}" class="card-img-top imagen_posts" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Festival de rock</h5>
-                <p class="card-text">Conoce que artistas estaran en el festival 2022 de rock. ¿Cuales son los requisitos para asistir?</p>
-              </div>
-              <div class="card-footer">
-                  <small class="text-muted">
-                    <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
-                    <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                  </small>
-              </div>
+        <div id="espacio" style="height: 100vh;">
+            <div class="row lign-items-center cargando_posts" style="margin-top: 40vh">
+                <div class="col offset-md-5 offset-sm-4 offset-3">
+                    <div class="spinner-grow spiner_1" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow spiner_2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow spiner_3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow spiner_4" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="spinner-grow spiner_5" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="col">
-            <div class="card_pub h-100">
-              <img src="{{ asset('img/posts/6.webp') }}" class="card-img-top imagen_posts" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">El reggaeton y su gran influencia</h5>
-                <p class="card-text">¿Por que el reggaeton se a convertido en uno de los géneros más escuchados? </p>
-              </div>
-              <div class="card-footer">
-                  <small class="text-muted">
-                    <a class="btn btn-primary" href="{{ route('home') }}" role="button">Editar</a>
-                    <a class="btn btn-warning" href="{{ route('home') }}" role="button">Eliminar</a>
-                  </small>
-              </div>
-            </div>
-        </div>
 
+        <script src="{{ asset('js/async_administrar_posts.js') }}"></script>
+
+        <br><br><br>
     </div>
-
-</div>
-
-<br>
-<br>
-<br>
 @endsection
