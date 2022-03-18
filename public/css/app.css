@@ -7,7 +7,41 @@ body {
     /* background: rgb(33, 33, 33);
     background: linear-gradient(90deg, rgb(74, 37, 95) 0%, rgb(35, 30, 39) 35%, rgb(54, 107, 72) 100%); */
     /* background-image: url("../img/fondo_2.jpg"); */
-    background-color: #151515;
+    background-color: #313131;
+}
+
+.div_home {
+    min-height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+    text-align: justify;
+    background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
+}
+
+.text_home {
+    background-color: #31313133;
+    margin-top: 15vh;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 10px;
+    color: rgb(230, 227, 240);
+}
+
+.text_home_2 {
+    background-color: #31313133;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 10px;
+    color: rgba(93, 248, 158, 0.979);
+}
+
+.texto_desc {
+    text-justify: distribute;
+}
+
+.icon_music {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 75px;
 }
 
 .contenedor_nav {

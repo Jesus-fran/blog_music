@@ -2,7 +2,7 @@
     <nav class="navbar  navbar-expand-lg  bar_nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <div id="home"> <i class="bi bi-music-note-beamed"></i> 𝑴ú𝒔𝒊𝒄𝒂</div>
+                <div id="home"> <i class="bi bi-music-note-beamed"></i> Música</div>
             </a>
             <button class="navbar-toggler btn_nav" type="button" data-bs-toggle="collapse" data-bs-target="#opciones"
                 aria-controls="opciones" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="navbar-nav">
-                            <div class="col-md-auto offset-md-1"><a class="btn btn-outline-info offset-md-4"
+                            <div class="col-md-auto offset-md-1 offset-md-3"><a class="btn btn-outline-info offset-md-4"
                                     href="{{ route('publicaciones') }}" role="button">Publicaciones
                                 </a></div>
                             <div class="col-md-auto offset-md-1">

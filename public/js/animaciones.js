@@ -36,6 +36,7 @@ posicionarMenu();
 
 $(window).scroll(function() {
     posicionarMenu();
+    CambiarColorHome();
 });
 
 function posicionarMenu() {
@@ -56,6 +57,24 @@ function posicionarMenu() {
         // $('.wrapper').css('margin-top', '0');
     }
 }
+
+
+function CambiarColorHome() {
+    var altura_del_div = $('#col_home').height() / 3;
+    console.log(altura_del_div);
+    console.log($(window).scrollTop());
+    if ($(window).scrollTop() >= altura_del_div) {
+
+        $('#col_home').fadeOut(700);
+
+
+    } else {
+
+        $('#col_home').fadeIn(1500);
+
+    }
+}
+
 
 // Detectar giro de pantalla
 
