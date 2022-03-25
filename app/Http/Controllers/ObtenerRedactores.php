@@ -11,6 +11,12 @@ class ObtenerRedactores extends Controller
 {
     public function Obtener()
     {
+        $url_anterior = url()->previous();
+        $url_admin_redactores = url()->route('admin-redactores');
+        if ($url_anterior != $url_admin_redactores) {
+            return redirect()->route('admin-redactores');
+        }
+
         $redactores = DB::table('usuarios')->select('email', 'nombre')->where('tipo','=', 'REDACTOR')->orderByDesc('created_at')->paginate(15);
         $contenido = "";
         if ($redactores->isEmpty()) {

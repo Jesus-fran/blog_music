@@ -10,6 +10,12 @@ class AdminComentarios extends Controller
     public function Obtener(Request $request)
     {
 
+            $url_anterior = url()->previous();
+            $url_comentarios_admin = url()->route('admin-comentarios');
+            if ($url_anterior != $url_comentarios_admin) {
+                return redirect()->route('admin-comentarios');
+            }
+
             $id        = 0;
             $contenido    = "";
             $email = "";
@@ -211,7 +217,12 @@ class AdminComentarios extends Controller
 
     public function EliminarComentario(Request $request)
     {
-        // return $request;
+
+        $url_anterior = url()->previous();
+        $url_comentarios_admin = url()->route('admin-comentarios');
+        if ($url_anterior != $url_comentarios_admin) {
+            return redirect()->route('admin-comentarios');
+        }
 
         $comentarios = DB::table('comentarios')->where('id', '=', $request->id_comentario)->get();
         if ($comentarios->isEmpty()) {
@@ -238,8 +249,11 @@ class AdminComentarios extends Controller
 
     public function EliminaRespuesta(Request $request)
     {
-        // return $request;
-
+        $url_anterior = url()->previous();
+        $url_comentarios_admin = url()->route('admin-comentarios');
+        if ($url_anterior != $url_comentarios_admin) {
+            return redirect()->route('admin-comentarios');
+        }
 
         $respuestas = DB::table('respuestas')->where('id', '=', $request->id_respuesta)->get();
         if ($respuestas->isEmpty()) {

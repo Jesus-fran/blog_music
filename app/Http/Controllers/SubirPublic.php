@@ -11,6 +11,13 @@ class SubirPublic extends Controller
 {
     public function Guardar(SubirPublicRequest $request)
     {
+
+        $url_anterior = url()->previous();
+        $url_posts_admin =url()->route('crear-publicacion'); 
+        if ($url_anterior != $url_posts_admin) {
+            return redirect()->route('crear-publicacion');
+        }
+
         $post = new Post();
         $id_anterior = DB::table('posts')->max('id');
         // Si hay una publicacion anterior en la BD entonces

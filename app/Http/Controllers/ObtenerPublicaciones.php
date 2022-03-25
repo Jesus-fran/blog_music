@@ -9,6 +9,13 @@ class ObtenerPublicaciones extends Controller
 {
     public function ObtenerPublicacion()
     {
+
+        $url_anterior = url()->previous();
+        $url_posts_admin =url()->route('publicaciones'); 
+        if ($url_anterior != $url_posts_admin) {
+            return redirect()->route('publicaciones');
+        }
+
         $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->get();
         $publicaciones = "";
 

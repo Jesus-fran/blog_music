@@ -13,8 +13,6 @@ class SubirRespuesta extends Controller
     {
         if ($request->respuesta != "" && $request->respuesta != null && $request->id_comentario != "" && $request->id_comentario != null) {
 
-
-
             $respuesta = new Respuesta();
             $date_time = new DateTime();
             $date_time->format('Y-m-d H:i:s');

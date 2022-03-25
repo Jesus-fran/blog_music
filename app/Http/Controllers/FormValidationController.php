@@ -41,7 +41,7 @@ class FormValidationController extends Controller
 
   public function IniciarSesion(IniciarSesionRequest $request)
   {
-
+   
     $url_anterior = "";
     if ($request->has('redirect_to')) {
       $url_anterior = $request->redirect_to;

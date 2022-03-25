@@ -9,6 +9,13 @@ class ObtenerPostsAdmin extends Controller
 {
     public function ObtenerPublicacion()
     {
+
+        $url_anterior = url()->previous();
+        $url_posts_admin =url()->route('admin-publicaciones'); 
+        if ($url_anterior != $url_posts_admin) {
+            return redirect()->route('admin-publicaciones');
+        }
+
         $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->get();
         $publicaciones = "";
 
@@ -51,6 +58,14 @@ class ObtenerPostsAdmin extends Controller
 
     public function Eliminar(Request $request)
     {
+
+        $url_anterior = url()->previous();
+        $url_posts_admin =url()->route('admin-publicaciones'); 
+        if ($url_anterior != $url_posts_admin) {
+            return redirect()->route('admin-publicaciones');
+        }
+
+
         $comentarios= DB::table('comentarios')->where('id_post', '=', $request->id_post)->get();
         if ($comentarios->isEmpty()) {
 

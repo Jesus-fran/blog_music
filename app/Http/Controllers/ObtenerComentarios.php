@@ -10,9 +10,13 @@ class ObtenerComentarios extends Controller
     public function Obtener(Request $request)
     {
 
-
         if ($request->id_publicacion) {
 
+            $url_anterior = url()->previous();
+            $url_post = url('publicaciones', ['id'=>$request->id_publicacion]);
+            if ($url_anterior != $url_post) {
+                return redirect($url_post);
+            }
 
             $id_post = $request->id_publicacion;
             $id        = 0;

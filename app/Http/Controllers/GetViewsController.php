@@ -15,6 +15,10 @@ class GetViewsController extends Controller
 
     public function ViewMiCuenta(Request $request)
     {
+        if (session('email') != "" || session('email') != null) {
+            return redirect(url()->previous());
+        }
+
         if ($request->has('redirect_to')) {
             session()->put('redirect_to', $request->redirect_to);
             if ($request->has('registro')) {
@@ -44,6 +48,11 @@ class GetViewsController extends Controller
 
     public function ViewRegistrarse(Request $request)
     {
+        
+        if (session('email') != "" || session('email') != null) {
+            return redirect(url()->previous());
+        }
+
         if ($request->has('redirect_to')) {
             $redirect_to = $request->redirect_to;
             return view('cuenta.registrar.registrar_usuario', compact('redirect_to'));

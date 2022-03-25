@@ -10,6 +10,14 @@ class EliminarLector extends Controller
     public function Eliminar(Request $request)
     {
 
+        $url_anterior = url()->previous();
+        $url_admin_redactores = url()->route('admin-lectores');
+        if ($url_anterior != $url_admin_redactores) {
+            return redirect()->route('admin-lectores');
+        }
+
+
+
         $respuestas = DB::table('respuestas')->where('email_usuario', '=', $request->id_lector)->get();
         if ($respuestas->isEmpty()) {
 

@@ -7,7 +7,7 @@ $(document).ready(function() {
         url: '/obtener-publicaciones-admin',
         async: true,
         data: { _token: token },
-        type: 'POST',
+        type: 'GET',
         dataType: 'html',
         success: function(data) {
 

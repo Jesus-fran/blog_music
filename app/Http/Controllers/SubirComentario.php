@@ -12,6 +12,14 @@ class SubirComentario extends Controller
     public function Guardar(SubirComentRequest $request)
     {
 
+
+
+        $url_anterior = url()->previous();
+        $url_post = url('publicaciones', ['id' => $request->id_pub]);
+        if ($url_anterior != $url_post) {
+            return redirect($url_post);
+        }
+
         if ($request->comentario != "" && $request->comentario != null && $request->id_pub != "" && $request->id_pub != null) {
 
             $comentario = new Comentario();

@@ -61,8 +61,8 @@ function posicionarMenu() {
 
 function CambiarColorHome() {
     var altura_del_div = $('#col_home').height() / 3;
-    console.log(altura_del_div);
-    console.log($(window).scrollTop());
+    // console.log(altura_del_div);
+    // console.log($(window).scrollTop());
     if ($(window).scrollTop() >= altura_del_div) {
 
         $('#col_home').fadeOut(700);

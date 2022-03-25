@@ -9,6 +9,13 @@ class ObtenerLectores extends Controller
 {
     public function Obtener()
     {
+
+        $url_anterior = url()->previous();
+        $url_admin_redactores = url()->route('admin-lectores');
+        if ($url_anterior != $url_admin_redactores) {
+            return redirect()->route('admin-lectores');
+        }
+
         $lectores = DB::table('usuarios')->select('email', 'nombre')->where('tipo','=', 'LECTOR')->orderByDesc('created_at')->paginate(15);
         $contenido = "";
         if ($lectores->isEmpty()) {

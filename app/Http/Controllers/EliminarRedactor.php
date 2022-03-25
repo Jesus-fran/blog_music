@@ -12,7 +12,13 @@ class EliminarRedactor extends Controller
     public function Eliminar(Request $request)
     {
 
+        $url_anterior = url()->previous();
+        $url_admin_redactores = url()->route('admin-redactores');
+        if ($url_anterior != $url_admin_redactores) {
+            return redirect()->route('admin-redactores');
+        }
 
+        
         $posts = DB::table('posts')->where('email_redactor', '=', $request->email_redactor)->get();
         if ($posts->isEmpty()) {
 
