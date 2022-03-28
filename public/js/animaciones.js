@@ -17,20 +17,39 @@ $(document).ready(function() {
 // mostrar y ocultar inputs password
 var hide = true;
 
-function show_pass(id_input, e) {
+function show_pass(id_input, elemento) {
+
+
     if (hide) {
+        let icon = elemento.childNodes[0];
         $('#' + id_input).attr('type', 'text');
-        $(e).val('hide');
+        $(icon).remove();
+        $(elemento).append('<i class="bi bi-eye-slash"></i>');
         hide = false;
     } else {
+
+        let icon = elemento.childNodes[0];
         $('#' + id_input).attr('type', 'password');
-        $(e).val('show');
+        $(icon).remove();
+        $(elemento).append('<i class="bi bi-eye"></i>');
+
+
         hide = true;
     }
 
 }
 
 // Animaciones
+
+function show_menu() {
+
+    $('#navbar_collapsed').css('height', '100vh');
+    $('#navbar_collapsed').css('width', '100%');
+    $('#navbar_collapsed').css('z-index', '99');
+    $('#navbar_collapsed').css('text-align', 'center');
+    $('#opcion, #opcion').css('margin-top', '20%');
+}
+
 
 posicionarMenu();
 
@@ -47,6 +66,7 @@ function posicionarMenu() {
         $('#bar_bread').css('position', 'fixed');
         $('#bar_bread').css('top', '0');
         $('#bar_bread').css('max-width', 'inherit');
+        $('#bar_bread').css('z-index', '95');
 
         $('#bar_bread').css('margin-right', '-50px');
 

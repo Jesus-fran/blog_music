@@ -84,7 +84,7 @@
             <br><br>
             <div class="row">
                 <div class="col-md-4">
-                    <label>Ingrese sus tags:</label><br>
+                    <label>Ingrese las etiquetas:</label><br>
                     <input type="text" name="tags" id="tags" class="form-control" placeholder="tags" aria-label="titulo"
                         aria-describedby="addon-wrapping">
 

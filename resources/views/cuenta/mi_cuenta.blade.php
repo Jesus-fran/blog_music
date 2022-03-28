@@ -74,8 +74,8 @@
                                         data-span="span_pass_ini" minlength="8" maxlength="30"
                                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
                                         required>
-                                    <input type="button" class="btn btn-secondary" value="show"
-                                        onclick="show_pass('pass_ini', this)">
+                                    <span class="btn btn-light" id="inputGroupPrepend" onclick="show_pass('pass_ini', this)"><i
+                                            class="bi bi-eye"></i></span>
                                     {{-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[|°¬;:,._#@$!%*?&])[A-Za-z\d Ññ|°¬;:,._#@$!%*?&]{8,30}$" --}}
                                 </div>
                                 <span class="text-success" style="display: none" id="span_pass_ini">Debe tener al

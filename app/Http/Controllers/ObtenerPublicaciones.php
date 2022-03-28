@@ -23,11 +23,19 @@ class ObtenerPublicaciones extends Controller
             return "<br><h5>Ninguna publicación</h5><br><br><br><br><br><br><br><br><br><br><br><br>";
         } else {
             foreach ($publicacion as $dato) {
+
                 $usuario = DB::table('usuarios')->select('nombre')->where('email', '=', $dato->email_redactor)->get();
                 if ($usuario->isEmpty()) {
 
                     return "<br><h5>Hubo un error</h5><br><br><br><br><br><br><br><br><br><br><br><br>";
                 } else {
+
+
+                    $contenido_cadena = strip_tags($dato->contenido);
+
+                    $contenido = substr($contenido_cadena, 0, 100). "...";
+
+
                     $img = asset($dato->imagen);
 
                     $url = url('publicaciones', ['id' => $dato->id]);
@@ -40,7 +48,7 @@ class ObtenerPublicaciones extends Controller
                     <a href=\"" . $url . "\") }}\">
                         <h6 class=\"card-title\">" . $dato->titulo . "</h6>
                     </a>
-                    <p class=\"card-text\">" . $dato->contenido . "</p>
+                    <p class=\"card-text\">" . $contenido . "</p>
                     </div>
                     <div class=\"card-footer\">
                     <small class=\"text-muted\">Auto: 

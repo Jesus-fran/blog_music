@@ -40,6 +40,10 @@
         <br>
         <br>
         <br>
+        <h6 class="text-primary">Etiquetas: </h6>
+        @isset($tags)
+            <h6>{{$tags}}</h6>
+        @endisset
         <br>
         <br>
         <h5>Ingrese un comentario</h5>

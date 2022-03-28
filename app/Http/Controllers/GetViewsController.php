@@ -100,7 +100,7 @@ class GetViewsController extends Controller
             } elseif ($categoria == "MUSICA INSTRUMENTAL") {
                 $color_categoria = "badge music_instr text-dark";
             } elseif ($categoria == "MUSICA REGIONAL") {
-                $color_categoria == "badge bg-primary";
+                $color_categoria = "badge music_regional text-dark";
             }
 
             $contenido = $publicacion[0]->contenido;

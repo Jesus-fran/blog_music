@@ -94,8 +94,8 @@
                                             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[|°¬;:,._#@$!%*?&])[A-Za-z\d Ññ|°¬;:,._#@$!%*?&]{8,30}$"
                                             minlength="8" maxlength="30" aria-label="Sizing example input"
                                             aria-describedby="inputGroup-sizing-default" autocomplete="off" required>
-                                        <input type="button" class="btn btn-secondary" value="show"
-                                            onclick="show_pass('pass_1', this)">
+                                       <span class="btn btn-light" id="inputGroupPrepend" onclick="show_pass('pass_1', this)"><i
+                                            class="bi bi-eye"></i></span>
                                     </div>
                                     <span class="text-success" style="display: none" id="span_pass_1">Debe tener al menos
                                         8 caracteres
@@ -117,8 +117,8 @@
                                             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[|°¬;:,._#@$!%*?&])[A-Za-z\d Ññ|°¬;:,._#@$!%*?&]{8,30}$"
                                             minlength="8" maxlength="30" aria-label="Sizing example input"
                                             aria-describedby="inputGroup-sizing-default" required>
-                                        <input type="button" class="btn btn-secondary" value="show"
-                                            onclick="show_pass('pass_2', this)">
+                                            <span class="btn btn-light" id="inputGroupPrepend" onclick="show_pass('pass_2', this)"><i
+                                                class="bi bi-eye"></i></span>
 
                                     </div>
                                     <span class="text-success" style="display: none" id="span_pass_2">Debe tener al menos

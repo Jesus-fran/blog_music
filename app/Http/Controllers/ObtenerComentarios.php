@@ -40,10 +40,10 @@ class ObtenerComentarios extends Controller
                         <div class=\"card-header\">
                         </div>
                         <div class=\"card-body\">
-                            <blockquote class=\"blockquote mb-0\">
+                           
                                 <p> No hay comentarios</p>
                                 <footer class=\"blockquote-footer\"></footer>
-                            </blockquote>
+                          
                         </div>
                         <div class=\"card-footer\" id=\"card_footer\">
                         </div>
@@ -134,7 +134,7 @@ class ObtenerComentarios extends Controller
                                     Respuesta " . $num_respuesta . "
                                     </div>
                                     <div class=\"card-body " . $color_body_resp . "\">
-                                    <blockquote class=\"blockquote mb-0\">
+                                   
                                         <p> " . $contenido_resp . " </p>
                                         <br>
                                         <div class=\"row\">
@@ -148,7 +148,7 @@ class ObtenerComentarios extends Controller
                                         $hora_format_resp
                                         ."</h6></div>
                                         </div>
-                                    </blockquote>
+                                 
                                     </div>
                                     </div>
                                     </div>";
@@ -167,7 +167,7 @@ class ObtenerComentarios extends Controller
                                         Comentario " . $num_comentario . "
                                     </div>
                                     <div class=\"card-body " . $color_body_coment . "\">
-                                        <blockquote class=\"blockquote mb-0\">
+                                      
                                             <p>" . $contenido . "</p>
                                             <br>
                                             <div class=\"row\">
@@ -181,7 +181,7 @@ class ObtenerComentarios extends Controller
                                             $hora_format
                                             ."</h6></div>
                                             </div>
-                                        </blockquote>
+                                    
                                     </div>
                                     <div class=\"card-footer\" id=\"card_footer\">
                                     " . $dir . "
