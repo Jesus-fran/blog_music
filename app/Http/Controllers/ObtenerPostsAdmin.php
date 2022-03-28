@@ -28,6 +28,13 @@ class ObtenerPostsAdmin extends Controller
 
                     return "<br><h5>Hubo un error</h5><br><br><br><br><br><br><br><br><br><br><br><br>";
                 } else {
+
+
+                    $contenido_cadena = strip_tags($dato->contenido);
+
+                    $contenido = substr($contenido_cadena, 0, 100). "...";
+
+
                     $img = asset($dato->imagen);
 
                     $public = "<div class=\"col\">
@@ -39,7 +46,7 @@ class ObtenerPostsAdmin extends Controller
                    
                         <h6 class=\"card-title\">" . $dato->titulo . "</h6>
                     
-                    <p class=\"card-text\">" . $dato->contenido . "</p>
+                    <p class=\"card-text\">" . $contenido . "</p>
                     </div>
                     <div class=\"card-footer\">
                     <small class=\"text-muted\">

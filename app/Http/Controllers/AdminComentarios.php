@@ -145,7 +145,7 @@ class AdminComentarios extends Controller
 
                                     </div>
                                     <div class=\"card-body " . $color_body_resp . "\">
-                                    <blockquote class=\"blockquote mb-0\">
+                                 
                                         <p> " . $contenido_resp . " </p>
                                         <br>
                                         <div class=\"row\">
@@ -159,7 +159,7 @@ class AdminComentarios extends Controller
                                         $hora_format_resp
                                         ."</h6></div>
                                         </div>
-                                    </blockquote>
+                              
                                     </div>
                                     </div>
                                     </div>";
@@ -182,7 +182,7 @@ class AdminComentarios extends Controller
                                         <button class=\"btn btn-warning btn-sm offset-md-10 offset-sm-1\" data-id=\"$id\" onclick=\"EliminarComentario(this)\" role=\"button\">Eliminar</button>
                                     </div>
                                     <div class=\"card-body " . $color_body_coment . "\">
-                                        <blockquote class=\"blockquote mb-0\">
+                                       
                                             <p>" . $contenido . "</p>
                                             <br>
                                             <div class=\"row\">
@@ -196,7 +196,7 @@ class AdminComentarios extends Controller
                                             $hora_format
                                             ."</h6></div>
                                             </div>
-                                        </blockquote>
+                             
                                     </div>
                                     <div class=\"card-footer\" id=\"card_footer\">
                                     " . $respuesta . "
