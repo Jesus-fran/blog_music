@@ -27,7 +27,7 @@
     {{-- estilos css y codigo javascript --}}
     <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <script src="{{ asset('js/animaciones.js') }}"></script>
-
+    <meta name="insight-app-sec-validation" content="57c79aa2-2348-46fc-8bde-52081c43c6cc">
     <title>Mi musica</title>
 </head>
 
