@@ -24,7 +24,7 @@ $(document).ready(function() {
                     $('#row_publicaciones').append(data);
                     $('#row_publicaciones').show('slow');
                     setTimeout(() => {
-                        $('#espacio').remove();
+                        $('#espacio').css('display', 'none');
                     }, 500);
 
                 }

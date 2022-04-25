@@ -2,7 +2,7 @@
     <nav class="navbar  navbar-expand-lg bar_nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <div id="home"> <i class="bi bi-music-note-beamed"></i> Música</div>
+                <div class="logo"> <i class="bi bi-music-note-beamed"></i> Música</div>
             </a>
             <button class="navbar-toggler btn_nav" type="button" data-bs-toggle="collapse" data-bs-target="#opciones"
                 aria-controls="opciones" aria-expanded="false" aria-label="Toggle navigation" onclick="show_menu()">

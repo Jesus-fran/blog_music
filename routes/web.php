@@ -10,6 +10,7 @@ use App\Http\Controllers\ObtenerLectores;
 use App\Http\Controllers\SubirComentario;
 use App\Http\Controllers\AdminComentarios;
 use App\Http\Controllers\EliminarRedactor;
+use App\Http\Controllers\FiltrarPosts;
 use App\Http\Controllers\ObtenerPostsAdmin;
 use App\Http\Controllers\ObtenerRedactores;
 use App\Http\Controllers\GetViewsController;
@@ -31,6 +32,7 @@ Route::get('cerrar-sesion', [FormValidationController:: class, 'CerrarSesion'])-
 Route::get('publicaciones', [GetViewsController:: class, 'ViewPublicaciones'])->name('publicaciones');
 Route::get('publicaciones/{id}', [GetViewsController:: class, 'ViewPublicacion'])->name('publicacion');
 Route::get('obtener-publicaciones', [ObtenerPublicaciones:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones');
+Route::get('filtro-categoria', [FiltrarPosts:: class, 'FiltrarCategorias'] )->name('filtro-categoria');
 Route::get('crear-publicacion', [GetViewsController:: class, 'ViewCrearPublicacion'])->name('crear-publicacion')->middleware('redactor');
 Route::post('/guardar-publicacion', [SubirPublic:: class, 'Guardar'])->name('guardar-publicacion')->middleware('redactor');;
 

@@ -12,8 +12,8 @@
 @section('contenido')
     <div class="container">
         @csrf
-
-        <h5>Posts recientes</h5>
+        <br>
+        <h5 class="sub-font">Posts recientes</h5>
         <h5 id="message_error" style="text-align:center; display:none;"></h5>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 rows-cols-xs-1 g-4" id="row_publicaciones"
             style="display: none">

@@ -12,8 +12,7 @@
     <div class="container">
         @csrf
         <br><br><br>
-        <h4>Usuarios redactores</h4>
-
+        <h5 class="sub-font">Usuarios redactores</h5>
         <br><br>
         <h5 id="message_error" style="text-align:center; display:none;"></h5>
         <div class="col-8 col-md-8 col-lg-8">

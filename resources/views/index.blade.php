@@ -19,10 +19,7 @@
     </script>
     {{-- jquery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    {{-- fonts --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     {{-- estilos css y codigo javascript --}}
     <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}" />
@@ -36,48 +33,54 @@
     @include('navbar_y_footer/navbar')
 
 
-    <div class="container contenedor">
+    <div class="container contenedor" id="contenedor">
 
         @section('contenido')
 
-
-
             <div class="row bg-dark text-light div_home " id="div_home">
                 <div class="col-sm-12 col-md-6 offset-md-3" id="col_home">
-                    <h1 class="text_home" >El mejor blog de Música</h1>
+                    <h1 class="text_home">El mejor blog de Música</h1>
                     <h1 class="text_home_2">Para conversar y aprender de las experiencias de los demás</h1>
                     <div class="icon_music" id="icon_music">
                         <i class="bi bi-skip-start-fill"></i>
                         <i class="bi bi-stop-fill"></i>
                         <i class="bi bi-skip-end-fill"></i>
                     </div>
-                  
+
                 </div>
-                {{-- <div class="col-6 col-sm-6 col-md-6">
-                    
-                </div> --}}
             </div>
+            <br><br>
+            <div class="row gy-2" id="div_img_home">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <p>
+                        En este blog puedes encontrar publicaciones de los distintos tipos de música.
+                        Asi como saber opiniones sobre los generos de música mas escuchados.
+                    </p>
+                    <p>¡¡Sientete libre de leer , comentar o expresar tus ideas y gustos!!.</p>
+                </div>
 
-
-
-
-            <br>
-            <br>
-
-            <img src="{{ asset('img/banner2.jpg') }}" class="banner img-fluid float-end" alt="banner1" id="banner_2">
-            <p class="text text-start texto_desc">
-                En este blog puedes encontrar publicaciones de los distintos tipos de música.
-                Asi como saber opiniones sobre los generos de música mas escuchados.
-            </p>
-            <p class="text">¡¡Sientete libre de leer , comentar o expresar tus ideas y gustos!!.</p>
-
-            <br>
-            <div>
-                <img src="{{ asset('img/banner4.jpg') }}" class="banner4" alt="banner4">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <img src="{{ asset('img/banner2.jpg') }}" class=" img-fluid float-end">
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <img src="{{ asset('img/banner4.jpg') }}" class="img-fluid">
+                </div>
             </div>
-            <br><br><br>
+            <br>
+            <br>
+            <div class="row  align-items-center div_suscribete" id="div_suscribete">
+                <div class="col-12">
+                    <h5 class="text_crea_cuenta1">Crea una cuenta</h5>
+                    <div class="col-12">
+                        <h6 class="text_crea_cuenta2">Podras interactuar en los posts y te informaremos de nuevos contenidos de interés.</h6>
+                    </div>
+                    <div class="col-12 btn_crear_cuenta">
+                        <a href="{{ route('registrarse')}}" class="btn btn-light">Crear mi cuenta</a>
+                    </div>
+                </div>
+            </div>
+            <br><br>
         @show
-
     </div>
 
 

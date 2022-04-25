@@ -36,17 +36,15 @@ class ObtenerComentarios extends Controller
 
                 return "<div class=\"row\">
                 <div class=\"col\">
-                    <div class=\"card\">
-                        <div class=\"card-header\">
-                        </div>
+                    <div class=\"card shadow-sm\">
+                       
                         <div class=\"card-body\">
                            
                                 <p> No hay comentarios</p>
                                 <footer class=\"blockquote-footer\"></footer>
                           
                         </div>
-                        <div class=\"card-footer\" id=\"card_footer\">
-                        </div>
+                        
                     </div>
                 </div>
                 </div>";
@@ -83,7 +81,7 @@ class ObtenerComentarios extends Controller
                     }
 
                     $fecha_format = date('d-m-Y', strtotime($fecha));
-                    $hora_format =  date('H-i-s', strtotime($fecha));
+                    $hora_format =  date('H:i:s', strtotime($fecha));
 
                     // Se obtiene el nombre del usuario que comentó
                     $usuario = DB::table('usuarios')->select('nombre')->where('email', '=', $email)->get();
@@ -107,9 +105,9 @@ class ObtenerComentarios extends Controller
                                 $longitud_resp = $longitud_resp - 1;
                                 $email_usuario_resp = $dato_resp->email_usuario;
                                 $contenido_resp = $dato_resp->texto;
-                                $fecha_resp = $data->created_at;
+                                $fecha_resp = $dato_resp->created_at;
                                 $fecha_format_resp = date('d-m-Y', strtotime($fecha_resp));
-                                $hora_format_resp =  date('H-i-s', strtotime($fecha_resp));
+                                $hora_format_resp =  date('H:i:s', strtotime($fecha_resp));
 
                                 if ($email_usuario_resp == session('email')) {
                                     $color_body_resp = "card_body";
@@ -128,27 +126,25 @@ class ObtenerComentarios extends Controller
                                     $nombre_user_resp = $usuario_resp[0]->nombre;
                                     // Se genera un card de respuesta y se va almacenando
                                     $respuesta_generada = "<br>
-                                    <div class=\"col-10 align-self-end offset-2\">
-                                    <div class=\"card\">
-                                    <div class=\"card-header\">
-                                    Respuesta " . $num_respuesta . "
-                                    </div>
+                                    <div class=\"col-10 align-self-end offset-2 \">
+                                    <div class=\"card shadow-sm col_respuesta\">
                                     <div class=\"card-body " . $color_body_resp . "\">
-                                   
-                                        <p> " . $contenido_resp . " </p>
-                                        <br>
-                                        <div class=\"row\">
-                                        <div class=\"col\"><h6>".
-                                        $nombre_user_resp
-                                        ."</h6></div>
-                                        <div class=\"col text-end text-secondary offset-lg-5 offset-md-1 offset-sm-1 offset-xs-1\"><h6>Fecha: ".
-                                        $fecha_format_resp
-                                        ."</h6></div>
-                                        <div class=\"col text-end text-secondary\"><h6>Hora: ".
-                                        $hora_format_resp
-                                        ."</h6></div>
-                                        </div>
-                                 
+                                        
+                                    <div class=\"col float-end\">
+                                    <div class=\"btn-group\">
+                                        <button class=\"btn btn-sm\" type=\"button\" data-bs-toggle=\"dropdown\"
+                                            aria-expanded=\"false\">
+                                            <i class=\"bi bi-three-dots-vertical\"></i>
+                                        </button>
+        
+                                        <ul class=\"dropdown-menu options\">
+                                            <li>Fecha: ".$fecha_format_resp."</li>
+                                            <li>Hora:".$hora_format_resp. "</li>
+                                        </ul>
+                                    </div>
+                                    </div>
+                                        <h6 class=\"card-subtitle mb-2 text-muted \">(".$num_respuesta.")"." "." ".$nombre_user_resp. "</h6>
+                                        <p> " . $contenido_resp . " </p>         
                                     </div>
                                     </div>
                                     </div>";
@@ -162,28 +158,27 @@ class ObtenerComentarios extends Controller
                         $card_comentarios = "
                         <div class=\"row\">
                             <div class=\"col\">
-                                <div class=\"card\">
-                                    <div class=\"card-header\">
-                                        Comentario " . $num_comentario . "
-                                    </div>
+                                <div class=\"card card_comentarios\">
                                     <div class=\"card-body " . $color_body_coment . "\">
-                                      
-                                            <p>" . $contenido . "</p>
-                                            <br>
-                                            <div class=\"row\">
-                                            <div class=\"col\"><h6>".
-                                            $nombre_user
-                                            ."</h6></div>
-                                            <div class=\"col text-end text-secondary offset-lg-5 offset-md-1 offset-sm-1 offset-xs-1\"><h6>Fecha: ".
-                                            $fecha_format
-                                            ."</h6></div>
-                                            <div class=\"col text-end text-secondary\"><h6>Hora: ".
-                                            $hora_format
-                                            ."</h6></div>
+                                        <div class=\"col float-end\">
+                                            <div class=\"btn-group\">
+                                                <button class=\"btn btn-sm\" type=\"button\" data-bs-toggle=\"dropdown\"
+                                                    aria-expanded=\"false\">
+                                                    <i class=\"bi bi-three-dots-vertical\"></i>
+                                                </button>
+                
+                                                <ul class=\"dropdown-menu options\">
+                                                    <li>Fecha: ".$fecha_format."</li>
+                                                    <li>Hora:".$hora_format. "</li>
+                                                </ul>
                                             </div>
-                                    
+                                        </div>
+                                        <h6 class=\"card-subtitle mb-2 text-muted \">(".$num_comentario.")"." "." ".$nombre_user. "</h6>
+                                        <br>
+                                        <p>" . $contenido . "</p>
+                                        <br>
                                     </div>
-                                    <div class=\"card-footer\" id=\"card_footer\">
+                                    <div class=\"card-footer card_footer\" id=\"card_footer\">
                                     " . $dir . "
                                     " . $textarea . $respuesta . "
                                     </div>

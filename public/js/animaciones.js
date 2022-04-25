@@ -51,11 +51,30 @@ function show_menu() {
 }
 
 
+function ShowCrearCuenta() {
+
+    let altura_del_contenido = $('#div_img_home').outerHeight(true);
+
+    if ($(window).scrollTop() >= altura_del_contenido) {
+
+        $('#div_suscribete').fadeIn(2500);
+
+
+
+    } else {
+
+        $('#div_suscribete').fadeOut(700);
+
+    }
+}
+
+
 posicionarMenu();
 
 $(window).scroll(function() {
     posicionarMenu();
     CambiarColorHome();
+    ShowCrearCuenta();
 });
 
 function posicionarMenu() {

@@ -1,20 +1,34 @@
-/* * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-} */
-
 body {
-    /* background: rgb(33, 33, 33);
-    background: linear-gradient(90deg, rgb(74, 37, 95) 0%, rgb(35, 30, 39) 35%, rgb(54, 107, 72) 100%); */
-    /* background-image: url("../img/fondo_2.jpg"); */
     background-color: #313131;
+    font-family: helvetica;
+    font-size: 12pt;
+    font-weight: normal;
 }
 
 .div_home {
-    min-height: 100vh;
-    font-family: 'Roboto Mono', monospace;
+    min-height: 79.5vh;
     text-align: justify;
     background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
+}
+
+.div_suscribete {
+    min-height: 50vh;
+    text-align: justify;
+    background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
+}
+
+.text_crea_cuenta1 {
+    text-align: center;
+    color: rgba(93, 248, 158, 0.979);
+}
+
+.text_crea_cuenta2 {
+    text-align: center;
+    color: rgb(230, 227, 240);
+}
+
+.btn_crear_cuenta {
+    text-align: center;
 }
 
 .text_home {
@@ -34,18 +48,13 @@ body {
     color: rgba(93, 248, 158, 0.979);
 }
 
-.texto_desc {
-    text-justify: distribute;
-}
-
 .icon_music {
     margin-top: 60px;
     text-align: center;
-    font-size: 75px;
+    font-size: 55px;
 }
 
 .contenedor_nav {
-    background-color: #151515;
     padding: 0;
 }
 
@@ -69,8 +78,8 @@ body {
     text-align: justify;
 }
 
-#home {
-    font-family: "Arial Black", Gadget, sans-serif;
+.logo {
+    font-family: Helvetica;
     font-size: 25px;
     letter-spacing: 0.6px;
     word-spacing: -5px;
@@ -83,10 +92,6 @@ body {
 }
 
 .bar_nav {
-    /* border-top-left-radius: 20px;
-    border-top-right-radius: 20px; */
-    /* min-width: 100%; */
-    /* background: rgb(33, 33, 33); */
     background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
 }
 
@@ -109,14 +114,14 @@ body {
     display: block;
 }
 
-.banner4 {
-    width: 50%;
-    margin-top: 24%;
+.banner2 {
+    /* width: 50%; */
+    margin-top: 10%;
     display: block;
 }
 
 .text {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Helvetica;
     font-style: normal;
     font-size: large;
     color: #000000;
@@ -163,7 +168,7 @@ body {
 .error-403 h1,
 .error-404 h1,
 .error-419 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Helvetica;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -194,7 +199,7 @@ body {
 }
 
 .error h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Helvetica;
     font-size: 22px;
     font-weight: 400;
     text-transform: uppercase;
@@ -214,15 +219,6 @@ body {
         font-size: 141px;
     }
 }
-
-
-/* .fondo_sesion {
-    margin: 0 auto;
-    background-size: cover;
-    background-color: grey;
-    background-image: url("../img/fondo_sesion_1.jpg");
-    background-position: 50% 50%;
-} */
 
 .card_header_sesion {
     background: rgb(33, 33, 33);
@@ -256,12 +252,12 @@ body {
 
 .card_pub:hover {
     background-color: #ffffff;
-    margin: 2px;
+    margin-top: 5px;
 }
 
 .card_admin:hover {
-    background-color: #f3eded;
-    margin: 5px;
+    background-color: #ffffff;
+    margin-top: 5px;
 }
 
 .footer {
@@ -318,4 +314,54 @@ body {
 
 .music_regional {
     background-color: #6ddf69;
+}
+
+.sub-font {
+    font-family: helvetica;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.color-titulo-post {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.986) 0%, rgba(10, 10, 10, 0.89) 35%, rgb(43, 99, 77) 100%);
+}
+
+.titulo-post {
+    font-family: helvetica;
+    font-size: 16pt;
+    text-align: center;
+}
+
+.card_comentarios {
+    border-bottom: none;
+    border-left: none;
+}
+
+.options {
+    font-family: Helvetica;
+    line-height: 2;
+    text-align: left;
+    font-size: 10pt;
+    padding: 1px;
+}
+
+.filtro a {
+    cursor: pointer;
+}
+
+.card_footer {
+    background-color: white;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.col_respuesta {
+    border-top: none;
+    border-right: none
+}
+
+.btn_ingresar {
+    background: linear-gradient(90deg, rgba(43, 36, 73, 0.986) 0%, rgba(32, 11, 54, 0.89) 35%, rgb(43, 99, 77) 100%);
+    color: white;
 }

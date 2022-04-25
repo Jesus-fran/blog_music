@@ -48,7 +48,7 @@ class ObtenerRedactores extends Controller
                 <li class='page-item " . $atributo_previus . "'>
                 <a class='page-link' href='" . $redactores->previousPageUrl() . "' tabindex='-1' aria-disabled='true'>Previous</a>
                 </li>
-                <li class='page-item disabled'><a class='page-link' href='#'>" . $redactores->currentPage() . "</a></li>
+                <li class='page-item disabled'><a class='page-link' href='#'>Página " . $redactores->currentPage() . "</a></li>
                 <li class='page-item " . $atributo_next . "'>
                 <a class='page-link' href='" . $redactores->nextPageUrl() . "'>Next</a>
                 </li>

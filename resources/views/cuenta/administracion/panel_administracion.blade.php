@@ -11,7 +11,7 @@
 <br>
 
 <div class="container-fluid">
-    <h4>Estadísticas del blog</h4>
+    <h5 class="sub-font">Estadísticas del blog<h5>
 
     {{-- Codigo para el grafico --}}
     <div class="row">
@@ -21,7 +21,7 @@
     </div>
     <br>
 
-    <h4>Opciones de administración</h4>
+    <h5 class="sub-font">Opciones de administración</h5>
     <br>
     
     <div class="row">
@@ -30,7 +30,7 @@
                 <div class="card card_admin" style="width: 18rem;">
                     <img src="{{ asset('img/usuario_redactor_2.webp') }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Usuarios redactores</h5>
+                      <h5 class="card-title sub-font">Usuarios redactores</h5>
                       <p class="card-text">Administra a los usuarios que redactan o redactaran en los posts</p><br>
                       <a href="{{ route('admin-redactores') }}" class="btn btn-primary">Administrar redactores</a>
                     </div>
@@ -40,7 +40,7 @@
                 <div class="card card_admin" style="width: 18rem;">
                     <img src="{{ asset('img/admin_posts.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Posts para administrar</h5><br><br>
+                      <h5 class="card-title sub-font">Posts para administrar</h5><br><br>
                       <p class="card-text">Elimina, oculta y aprueba los posts de los redactores.</p><br><br>
                       <a href="{{ route('admin-publicaciones') }}" class="btn btn-primary">Administrar posts</a>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="card card_admin" style="width: 18rem;">
                     <img src="{{ asset('img/usuario_lector.webp') }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Usuarios lectores</h5>
+                      <h5 class="card-title sub-font">Usuarios lectores</h5>
                       <p class="card-text">Elimina o suspende usuarios lectores.</p><br>
                       <a href="{{ route('admin-lectores') }}" class="btn btn-primary">Administrar lectores</a>
                     </div>
@@ -61,7 +61,7 @@
                     <img src="{{asset('img/admin_comentarios_2.jpg')}}" class="card-img-top img_admin" alt="...">
                     <div class="card-body">
                 
-                      <h5 class="card-title">Comentarios y respuestas</h5>
+                      <h5 class="card-title sub-font">Comentarios y respuestas</h5>
                       <p class="card-text">Elimina comentarios o respuestas de los posts.</p>
                       <a href="{{ route('admin-comentarios') }}" class="btn btn-primary">Administrar comentarios</a>
                     </div>

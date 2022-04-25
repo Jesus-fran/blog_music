@@ -92,8 +92,7 @@
                         <br>
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-info" id="btn_submit" type="submit">Ingresar
-
+                                <button class="btn btn_ingresar" id="btn_submit" type="submit">Ingresar
                                 </button>
                             </div>
                         </div>
@@ -112,12 +111,12 @@
                     <div class="card-footer text-muted">
 
                         @if (session('redirect_to'))
-                            <a class="btn btn-primary"
+                            <a class="btn btn-success"
                                 href="{{ route('registrarse', ['redirect_to' => session('redirect_to')]) }}"
                                 role="button">Registrarme
                             </a>
                         @else
-                            <a class="btn btn-primary" href="{{ route('registrarse') }}" role="button">Registrarme
+                            <a class="btn btn-success" href="{{ route('registrarse') }}" role="button">Registrarme
                             </a>
                         @endif
                     </div>

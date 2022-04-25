@@ -15,16 +15,13 @@ $(document).ready(function() {
                 if (data == "") {
 
                     console.log("Datos vacios");
-                    // $('#message_error').attr('class', 'text-danger bg-light');
-                    // $('#message_error').html('Error al obtener comentarios');
-                    // $('#message_error').show('slow');
                 } else {
                     // console.log(data);
 
                     $('#row_publicaciones').append(data);
                     $('#row_publicaciones').show('slow');
                     setTimeout(() => {
-                        $('#espacio').remove();
+                        $('#espacio').css('display', 'none');
                     }, 500);
 
                 }

@@ -5,18 +5,32 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ObtenerPublicaciones extends Controller
+class FiltrarPosts extends Controller
 {
-    public function ObtenerPublicacion()
+    public function FiltrarCategorias(Request $request)
     {
-
         $url_anterior = url()->previous();
         $url_posts_admin =url()->route('publicaciones'); 
         if ($url_anterior != $url_posts_admin) {
             return redirect()->route('publicaciones');
         }
-
-        $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->paginate(2);
+        $categoria = '';
+    
+        if ($request->id_categoria == '2') {
+            $categoria =  'MUSICA POPULAR MODERNA';
+        }elseif ($request->id_categoria == '3') {
+            $categoria = 'MUSICA INSTRUMENTAL';
+        }elseif ($request->id_categoria == '4') {
+            $categoria = 'MUSICA REGIONAL';
+        }elseif ($request->id_categoria == '5') {
+            $categoria = 'CONCIERTOS';
+        }
+        if ($categoria != '') {
+            $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->where('categoria', '=', $categoria)->paginate(2);
+        } else {
+            $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->paginate(2);
+        }
+        
         $publicaciones = "";
 
         if ($publicacion->isEmpty()) {
@@ -69,6 +83,7 @@ class ObtenerPublicaciones extends Controller
             if ($publicacion->firstItem() == $publicacion->currentPage()) {
                 $atributo_previus = "disabled";
             }
+
             $nav_pagination = "
             <div class=\"col-12\">
             <nav aria-label='Page navigation example'>
@@ -88,5 +103,7 @@ class ObtenerPublicaciones extends Controller
 
             return $publicaciones .= $nav_pagination;
         }
+
+
     }
 }

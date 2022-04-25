@@ -168,7 +168,7 @@
 
                         </div>
                         <div class="card-footer text-muted">
-                            <button class="btn btn-primary" type="submit" id="btn_registrarse">Finalizar registro
+                            <button class="btn btn-success" type="submit" id="btn_registrarse">Finalizar registro
                             </button>
                             <br><br>
                             <div class="row">

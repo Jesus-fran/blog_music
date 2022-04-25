@@ -78,6 +78,7 @@ class GetViewsController extends Controller
         if ($publicacion->isEmpty()) {
             return redirect(404);
         } else {
+                        
             $titulo = $publicacion[0]->titulo;
             $email_redactor = $publicacion[0]->email_redactor;
             $nombre_autor = "";
@@ -103,13 +104,17 @@ class GetViewsController extends Controller
                 $color_categoria = "badge music_regional text-dark";
             }
 
+
+            $comentarios = DB::table('comentarios')->where('id_post', '=', $id)->count();
+            
+
             $contenido = $publicacion[0]->contenido;
             $imagen = asset($publicacion[0]->imagen);
             $tags = $publicacion[0]->tags;
             $created_at = $publicacion[0]->created_at;
             $fecha_creacion = date('d-m-Y', strtotime($created_at));
             $updated_at = $publicacion[0]->updated_at;
-            return view('publicaciones.new_publicacion', compact('id', 'nombre_autor', 'fecha_creacion' , 'titulo', 'categoria', 'color_categoria', 'imagen', 'contenido', 'tags', 'created_at', 'updated_at'));
+            return view('publicaciones.new_publicacion', compact('id', 'comentarios',  'nombre_autor', 'fecha_creacion' , 'titulo', 'categoria', 'color_categoria', 'imagen', 'contenido', 'tags', 'created_at', 'updated_at'));
         }
     }
 
