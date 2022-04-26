@@ -58,6 +58,15 @@ body {
     padding: 0;
 }
 
+.breadcrumb-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.breadcrumb-item :hover {
+    color: #a5a5a5;
+}
+
 .btn_nav {
     z-index: 99;
     color: rgb(0, 0, 0);
@@ -267,6 +276,10 @@ body {
     background: linear-gradient(90deg, rgba(33, 33, 33, 1) 0%, rgb(32, 11, 54) 35%, rgb(43, 99, 77) 100%);
 }
 
+.footer a {
+    text-decoration: none;
+}
+
 .editor {
     width: inherit;
 }
@@ -354,6 +367,11 @@ body {
     border-right: none;
     border-left: none;
     border-bottom: none;
+}
+
+.header_comentarios {
+    border: none;
+    background-color: white;
 }
 
 .col_respuesta {

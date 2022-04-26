@@ -14,7 +14,7 @@
 
 
         <br><br><br>
-        <h5>Comentarios de posts</h5>
+        <h5 class="sub-font">Comentarios de posts</h5>
         <br><br><br>
         <h5 id="message_error" style="text-align:center; display:none;"></h5>
         <div id="div_animacion">

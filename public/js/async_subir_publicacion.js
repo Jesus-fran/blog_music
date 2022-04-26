@@ -15,7 +15,9 @@ $('#form_publicacion').on('submit', function(e) {
     formData.append('_token', $('input[name=_token]').val());
     var categoria = Object.fromEntries(formData)['categoria'];
     var titulo = Object.fromEntries(formData)['titulo'];
-    var contenido = Object.fromEntries(formData)['editor_post'];
+    // var contenido = Object.fromEntries(formData)['editor_post'];
+    var contenido = tinyMCE.get('editor_post').getContent();
+    formData.append('editor_post', contenido);
     var imagen_file = Object.fromEntries(formData)['imagen_file']['name'];
     var imagen_url = Object.fromEntries(formData)['imagen_url'];
     var tags = Object.fromEntries(formData)['tags'];
@@ -117,20 +119,20 @@ $('#form_publicacion').on('submit', function(e) {
                     $('#message_publicando').hide('fast');
                     $('#span_categoria').html("");
                     $('#span_titulo').html("");
+                    tinyMCE.get('editor_post').setContent('');
                     $('#span_imagen_file').html("");
-                    $('#span_imagen_url').html("");
                     $('#span_imagen_url').html("");
                     $('#span_tags').html("");
                     document.getElementById("categoria").value = "";
                     document.getElementById("titulo").value = "";
-                    // var frame = document.getElementsByTagName('iframe')[0];
-                    // $(frame).html("<!DOCTYPE html><html class=\"><head><meta http-equiv=\"Content - Type \" content=\"text / html; charset = utf - 8 \"><link rel=\"stylesheet \" type=\"text / css \" href=\".. / minified / themes / content /default.min.css \"></head><body contenteditable=\"true \" dir=\"ltr \" class=\"\"><p></p></body></html>");
                     document.getElementById("imagen_file").value = "";
                     document.getElementById("imagen_url").value = "";
                     document.getElementById("tags").value = "";
                     $('#message_error').attr('class', 'text-success bg-light');
                     $('#message_error').html('Publicación realizada correctamente');
                     $('#message_error').show('slow');
+                    $('#btn-ver-pub').css('display', 'inline');
+                    $('#btn-ver-pub').attr('href', XHR.responseText);
                 }
 
 
@@ -138,6 +140,8 @@ $('#form_publicacion').on('submit', function(e) {
         });
 
     } else {
+        $('#saveButton').removeAttr('disabled');
+        $('#message_publicando').hide('fast');
         $('#message_error').attr('class', 'text-warning bg-light');
         $('#message_error').html("Haga una publicación primero");
         $('#message_error').show('slow');

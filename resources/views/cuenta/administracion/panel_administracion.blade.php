@@ -32,7 +32,7 @@
                     <div class="card-body">
                       <h5 class="card-title sub-font">Usuarios redactores</h5>
                       <p class="card-text">Administra a los usuarios que redactan o redactaran en los posts</p><br>
-                      <a href="{{ route('admin-redactores') }}" class="btn btn-primary">Administrar redactores</a>
+                      <a href="{{ route('admin-redactores') }}" class="btn btn_ingresar">Administrar redactores</a>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <div class="card-body">
                       <h5 class="card-title sub-font">Posts para administrar</h5><br><br>
                       <p class="card-text">Elimina, oculta y aprueba los posts de los redactores.</p><br><br>
-                      <a href="{{ route('admin-publicaciones') }}" class="btn btn-primary">Administrar posts</a>
+                      <a href="{{ route('admin-publicaciones') }}" class="btn btn_ingresar">Administrar posts</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                     <div class="card-body">
                       <h5 class="card-title sub-font">Usuarios lectores</h5>
                       <p class="card-text">Elimina o suspende usuarios lectores.</p><br>
-                      <a href="{{ route('admin-lectores') }}" class="btn btn-primary">Administrar lectores</a>
+                      <a href="{{ route('admin-lectores') }}" class="btn btn_ingresar">Administrar lectores</a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 
                       <h5 class="card-title sub-font">Comentarios y respuestas</h5>
                       <p class="card-text">Elimina comentarios o respuestas de los posts.</p>
-                      <a href="{{ route('admin-comentarios') }}" class="btn btn-primary">Administrar comentarios</a>
+                      <a href="{{ route('admin-comentarios') }}" class="btn btn_ingresar">Administrar comentarios</a>
                     </div>
                 </div>
             </div>

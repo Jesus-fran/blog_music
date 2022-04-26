@@ -34,19 +34,17 @@ class AdminComentarios extends Controller
                 return "<div class=\"row\">
                 <div class=\"col\">
                     <div class=\"card\">
-                        <div class=\"card-header\">
-                        </div>
+                        
                         <div class=\"card-body\">
                             <blockquote class=\"blockquote mb-0\">
                                 <p> No hay comentarios</p>
                                 <footer class=\"blockquote-footer\"></footer>
                             </blockquote>
                         </div>
-                        <div class=\"card-footer\" id=\"card_footer\">
-                        </div>
+                    
                     </div>
                 </div>
-                </div>";
+                </div><br><br>";
             } else {
                 $longitud = count($comentario_bd);
                 $textarea = "";
@@ -69,7 +67,7 @@ class AdminComentarios extends Controller
                     if ($nombre_post_antes == $nombre_post) {
                         $post_comentario = "";
                     }else{
-                        $post_comentario = "<br><br><br><h5>".$nombre_post."</h5><br><br>";
+                        $post_comentario = "<br><br><br><h5 class=\"sub-font\">".$nombre_post."</h5><br><br>";
                         $nombre_post_antes = $nombre_post;
                     }
 
@@ -138,28 +136,30 @@ class AdminComentarios extends Controller
                                     // Se genera un card de respuesta y se va almacenando
                                     $respuesta_generada = "<br>
                                     <div class=\"col-10 align-self-end offset-2\">
-                                    <div class=\"card\">
-                                    <div class=\"card-header\">
-                                    Respuesta " . $num_respuesta . "
-                                    <button class=\"btn btn-warning btn-sm offset-md-6 offset-sm-1\" data-id=\"$id_respuesta\" onclick=\"EliminaRespuesta(this)\" role=\"button\">Eliminar</button>
+                                    <div class=\"card  shadow-sm col_respuesta\">
+                                    <div class=\"card-header header_comentarios\">
+                                    <button class=\"btn btn-warning btn-sm offset-md-6 offset-sm-1 float-end\" data-id=\"$id_respuesta\" onclick=\"EliminaRespuesta(this)\" role=\"button\">Eliminar</button>
 
                                     </div>
                                     <div class=\"card-body " . $color_body_resp . "\">
-                                 
-                                        <p> " . $contenido_resp . " </p>
-                                        <br>
-                                        <div class=\"row\">
-                                        <div class=\"col\"><h6>".
-                                        $nombre_user_resp
-                                        ."</h6></div>
-                                        <div class=\"col text-end text-secondary offset-lg-5 offset-md-1 offset-sm-1 offset-xs-1\"><h6>Fecha: ".
-                                        $fecha_format_resp
-                                        ."</h6></div>
-                                        <div class=\"col text-end text-secondary\"><h6>Hora: ".
-                                        $hora_format_resp
-                                        ."</h6></div>
+
+                                        <div class=\"col float-end\">
+                                            <div class=\"btn-group\">
+                                                <button class=\"btn btn-sm\" type=\"button\" data-bs-toggle=\"dropdown\"
+                                                    aria-expanded=\"false\">
+                                                    <i class=\"bi bi-three-dots-vertical\"></i>
+                                                </button>
+                
+                                                <ul class=\"dropdown-menu options\">
+                                                    <li>Fecha: ".$fecha_format_resp."</li>
+                                                    <li>Hora:".$hora_format_resp. "</li>
+                                                </ul>
+                                            </div>
                                         </div>
-                              
+                                        <h6 class=\"card-subtitle mb-2 text-muted \">(".$num_respuesta.")"." "." ".$nombre_user_resp. "</h6>
+                                        <br>
+                                        <p> " . $contenido_resp . " </p>
+                                        <br>                  
                                     </div>
                                     </div>
                                     </div>";
@@ -175,30 +175,30 @@ class AdminComentarios extends Controller
                         
                         <div class=\"row\">
                             <div class=\"col\">
-                                <div class=\"card\">
-                                    <div class=\"card-header\">
-                                        Comentario " . $num_comentario . "
-                                        
-                                        <button class=\"btn btn-warning btn-sm offset-md-10 offset-sm-1\" data-id=\"$id\" onclick=\"EliminarComentario(this)\" role=\"button\">Eliminar</button>
+                                <div class=\"card card_comentarios\">
+                                    <div class=\"card-header header_comentarios\">
+                                        <button class=\"btn btn-warning btn-sm offset-md-10 offset-sm-1 float-end\" data-id=\"$id\" onclick=\"EliminarComentario(this)\" role=\"button\">Eliminar</button>
                                     </div>
                                     <div class=\"card-body " . $color_body_coment . "\">
-                                       
-                                            <p>" . $contenido . "</p>
-                                            <br>
-                                            <div class=\"row\">
-                                            <div class=\"col\"><h6>".
-                                            $nombre_user
-                                            ."</h6></div>
-                                            <div class=\"col text-end text-secondary offset-lg-5 offset-md-1 offset-sm-1 offset-xs-1\"><h6>Fecha: ".
-                                            $fecha_format
-                                            ."</h6></div>
-                                            <div class=\"col text-end text-secondary\"><h6>Hora: ".
-                                            $hora_format
-                                            ."</h6></div>
+                                        <div class=\"col float-end\">
+                                            <div class=\"btn-group\">
+                                                <button class=\"btn btn-sm\" type=\"button\" data-bs-toggle=\"dropdown\"
+                                                    aria-expanded=\"false\">
+                                                    <i class=\"bi bi-three-dots-vertical\"></i>
+                                                </button>
+                
+                                                <ul class=\"dropdown-menu options\">
+                                                    <li>Fecha: ".$fecha_format."</li>
+                                                    <li>Hora:".$hora_format. "</li>
+                                                </ul>
                                             </div>
-                             
+                                        </div>
+                                        <h6 class=\"card-subtitle mb-2 text-muted \">(".$num_comentario.")"." "." ".$nombre_user. "</h6>
+                                        <br>
+                                        <p>" . $contenido . "</p>
+                                        <br>
                                     </div>
-                                    <div class=\"card-footer\" id=\"card_footer\">
+                                    <div class=\"card-footer card_footer\" id=\"card_footer\">
                                     " . $respuesta . "
                                     </div>
                                 </div>

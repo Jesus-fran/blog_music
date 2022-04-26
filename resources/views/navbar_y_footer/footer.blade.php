@@ -1,6 +1,7 @@
 <div class="container contenedor_foot" id="contenedor_foot">
     <footer class="footer">
         <div class="container-fluid">
+            <br><br>
             <div class="row">
                 <div class="col">
 
@@ -26,7 +27,7 @@
                     <ul>
                         <br>
                         <li>
-                            <p class="text-white">Mi música. © 2021</p>
+                            <p class="text-white">Mi música. © 2022</p>
                         </li>
                         <li><a class="text-white" href="#">www.miMusica.com</a></li><br>
                         <li>

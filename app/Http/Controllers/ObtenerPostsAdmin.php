@@ -16,7 +16,7 @@ class ObtenerPostsAdmin extends Controller
             return redirect()->route('admin-publicaciones');
         }
 
-        $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->get();
+        $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->paginate(9);
         $publicaciones = "";
 
         if ($publicacion->isEmpty()) {
@@ -59,7 +59,33 @@ class ObtenerPostsAdmin extends Controller
                 }
             }
 
-            return $publicaciones;
+            $atributo_next = "";
+            $atributo_previus = "";
+            if ($publicacion->lastPage() == $publicacion->currentPage()) {
+                $atributo_next = "disabled";
+            }
+            if ($publicacion->firstItem() == $publicacion->currentPage()) {
+                $atributo_previus = "disabled";
+            }
+
+            $nav_pagination = "
+            <div class=\"col-12\">
+            <nav aria-label='Page navigation example'>
+            <ul class='pagination justify-content-center'>
+                
+                <li class='page-item " . $atributo_previus . "'>
+                <a class='page-link' href='" . $publicacion->previousPageUrl() . "' tabindex='-1' aria-disabled='true'>Previous</a>
+                </li>
+                <li class='page-item disabled'><a class='page-link' href='#'>Página " . $publicacion->currentPage() . "</a></li>
+                <li class='page-item " . $atributo_next . "'>
+                <a class='page-link' href='" . $publicacion->nextPageUrl() . "'>Next</a>
+                </li>
+            </ul>
+            </nav>             
+            </div>
+            ";
+
+            return $publicaciones .= $nav_pagination;
         }
     }
 

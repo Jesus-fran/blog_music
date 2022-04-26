@@ -9,17 +9,6 @@
 
         @csrf
 
-        {{-- incluye editor de texto --}}
-        <!-- Include the default theme -->
-        <link rel="stylesheet" href="{{ asset('minified/themes/default.min.css') }}" />
-
-        <!-- Include the editors JS -->
-        <script src=" {{ asset('minified/sceditor.min.js') }}"></script>
-
-        <!-- Include the BBCode or XHTML formats -->
-        <script src="{{ asset('minified/formats/bbcode.js') }}"></script>
-        <script src="{{ asset('minified/formats/xhtml.js') }}"></script>
-
         <br><br><br>
         <form action="" id="form_publicacion">
             <div class="row">
@@ -96,8 +85,14 @@
                 <div class="col">
                     <h5 id="message_error" style="text-align:center; display:none;"></h5>
                     <div id="message_publicando">
-                       
+
                     </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6 offset-5">
+                    <a class="btn btn_ingresar" id="btn-ver-pub" style="display: none">Ver publicación</a>
                 </div>
             </div>
 
@@ -122,7 +117,9 @@
     <br><br>
     <div id="vista_prev"></div>
     <br><br><br>
-    <script src="{{ asset('js/crear_editor_publicacion.js') }}"></script>
+    <script src="https://cdn.tiny.cloud/1/9iqn21hnlw4bewfai9j1124mp9l0b5rfkygjqnaw9k6hf5cr/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script src="{{ asset('js/tiny.js') }}"></script>
     <script src="{{ asset('js/async_subir_publicacion.js') }}"></script>
     </div>
 @endsection

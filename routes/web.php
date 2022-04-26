@@ -9,6 +9,7 @@ use App\Http\Controllers\SubirRespuesta;
 use App\Http\Controllers\ObtenerLectores;
 use App\Http\Controllers\SubirComentario;
 use App\Http\Controllers\AdminComentarios;
+use App\Http\Controllers\AdminFiltrarPosts;
 use App\Http\Controllers\EliminarRedactor;
 use App\Http\Controllers\FiltrarPosts;
 use App\Http\Controllers\ObtenerPostsAdmin;
@@ -47,6 +48,7 @@ Route::get('admin-lectores', [GetViewsController:: class, 'ViewAdminLectores'])-
 Route::get('admin-publicaciones', [GetViewsController:: class, 'ViewAdminPublicaciones'])->name('admin-publicaciones')->middleware('admin');
 Route::get('admin-comentarios', [GetViewsController:: class, 'ViewAdminComentarios'])->name('admin-comentarios')->middleware('admin');
 Route::get('obtener-publicaciones-admin', [ObtenerPostsAdmin:: class, 'ObtenerPublicacion'] )->name('obtener-publicaciones-admin')->middleware('admin');
+Route::get('filtro-categoria-admin', [AdminFiltrarPosts:: class, 'FiltrarCategorias'] )->name('filtro-categoria-admin');
 Route::post('eliminar-publicacion', [ObtenerPostsAdmin:: class, 'Eliminar'] )->name('eliminar-publicacion');
 Route::get('obtener-redactores', [ObtenerRedactores::class, 'Obtener'])->name('obtener-redactores')->middleware('admin');
 Route::post('eliminar-redactor', [EliminarRedactor::class, 'Eliminar'])->name('eliminar-redactor')->middleware('admin');

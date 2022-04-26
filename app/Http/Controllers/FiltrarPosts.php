@@ -26,9 +26,9 @@ class FiltrarPosts extends Controller
             $categoria = 'CONCIERTOS';
         }
         if ($categoria != '') {
-            $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->where('categoria', '=', $categoria)->paginate(2);
+            $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->where('categoria', '=', $categoria)->paginate(9);
         } else {
-            $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->paginate(2);
+            $publicacion = DB::table('posts')->select('id', 'email_redactor', 'categoria', 'titulo', 'contenido', 'imagen', 'created_at')->paginate(9);
         }
         
         $publicaciones = "";

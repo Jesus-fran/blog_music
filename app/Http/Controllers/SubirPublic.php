@@ -22,6 +22,7 @@ class SubirPublic extends Controller
         $id_anterior = DB::table('posts')->max('id');
         // Si hay una publicacion anterior en la BD entonces
         if ($id_anterior != "") {
+            $id_actual_return = strval($id_anterior + 1);
             $id_actual_post = strval($id_anterior + 1)."-";
             // Si la imagen es una url entonces
             if ($request->imagen_url == "" || $request->imagen_url == null) {
@@ -42,6 +43,7 @@ class SubirPublic extends Controller
                 $post->created_at = $date_time;
                 $post->updated_at = $date_time;
                 $post->save();
+                return url('publicaciones', ['id' => $id_actual_return]);
             } else {
                 $email_redactor_actual = session('email');
                 $date_time = new DateTime();
@@ -56,6 +58,7 @@ class SubirPublic extends Controller
                 $post->created_at = $date_time;
                 $post->updated_at = $date_time;
                 $post->save();
+                return url('publicaciones', ['id' => $id_actual_return]);
             }
         } else {
             if ($request->imagen_url == "" || $request->imagen_url == null) {
@@ -77,6 +80,7 @@ class SubirPublic extends Controller
                 $post->created_at = $date_time;
                 $post->updated_at = $date_time;
                 $post->save();
+
             } else {
                 $email_redactor_actual = session('email');
                 $date_time = new DateTime();
@@ -91,6 +95,7 @@ class SubirPublic extends Controller
                 $post->created_at = $date_time;
                 $post->updated_at = $date_time;
                 $post->save();
+
             }
         }
     }
